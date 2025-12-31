@@ -21,15 +21,45 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="flex justify-center items-center">
-        <h2 className="font-league font-medium">Yia Thao</h2>
-        <Image 
-          src={"/Ototo.png"}
-          alt="pic"
-          height={100}
-          width={100}
-        />
+      <div className="flex flex-col justify-center items-center -mt-35 mb-100">
+        <h1 className="font-league font-normal text-5xl">Why Choose Us?</h1>
+        <div className="mt-10 flex justify-center gap-55 font-league font-light text-xl">
+          <div className="flex flex-col items-center w-55">
+            <Image 
+              src={"/bowl-rice.png"}
+              alt="Bowl of rice"
+              width={100}
+              height={100}
+              className="mb-5"
+            />
+            <span className="text-3xl">Fresh</span>
+            <p className="font-extralight text-base">We offer the best and blah blah blah blah blah</p>
+          </div>
+          <div className="flex flex-col items-center w-55">
+            <Image 
+              src={"/bowl-noodles.png"}
+              alt="Bowl of rice"
+              width={100}
+              height={100}
+              className="mb-5"
+            />
+            <span className="text-3xl">Quality</span>
+            <p className="font-extralight text-base">blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
+          </div>
+          <div className="flex flex-col items-center w-55">
+            <Image 
+              src={"/tachometer.png"}
+              alt="Bowl of rice"
+              width={100}
+              height={100}
+              className="mb-5"
+            />
+            <span className="text-3xl">Fast</span>
+            <p className="font-extralight text-base">blah blah blah blah blah blah blah blah blah</p>
+          </div>
+        </div>
       </div>
+      <Footer />
     </>
   );
 }

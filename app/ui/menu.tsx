@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Footer from "./footer"
 
 export default function Menu() {
     return (
@@ -53,7 +54,7 @@ export default function Menu() {
                     priority
                 />
             </div>
-            <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col justify-center items-center mb-20">
                 <Image
                     src={"/menu_legend.png"}
                     alt="Menu Legend"
@@ -64,11 +65,12 @@ export default function Menu() {
                 <Image 
                     src={"/menu_warning.png"}
                     alt="Menu alergies warning"
-                    width={600}
-                    height={600}
+                    width={800}
+                    height={800}
                     className="pointer-events-none select-none"
                 />
             </div>
+            <Footer />
         </>
     )
 }
