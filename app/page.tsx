@@ -1,4 +1,3 @@
-import { Main } from "next/document";
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "./ui/footer";
@@ -6,13 +5,14 @@ import Footer from "./ui/footer";
 export default function Home() {
   return (
     <>
-      <div className="relative mt-50 flex flex-col justify-center items-center gap-2">
+      {/* Home Banner */}
+      <div className="relative mt-50 flex flex-col justify-center items-center gap-2 -mb-30">
         <p className="font-league font-medium text-8xl z-10 text-white">美味しい</p>
         <span className="font-league font-extralight text-xl z-10 text-white">Refined. Authentic. Unforgettable.</span>
         <Link className="bg-white font-lexend font-normal z-10 p-3 mb-150 cursor-pointer" href={"/menu"}>Discover Menu</Link>
         <div className="w-full z-1">
           <Image
-            src={"/social15.jpg"}
+            src={"/home_banner.webp"}
             alt="Home picture"
             width={1920}
             height={200}
@@ -21,12 +21,41 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="flex flex-col justify-center items-center -mt-35 mb-100">
+
+      {/* Brief About Us */}
+      <div className="flex justify-between items-center pr-20 pl-30 mb-40">
+        <div className="flex flex-col">
+          <span className="font-league font-semibold text-7xl mb-5">About Ototo</span>
+          <p className="w-90 mb-10 font-lexend font-light text-md">
+              At <span className="font-medium">Ototo, </span> 
+              blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
+              blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+          </p>
+          <Link href={"/"} className="px-6 py-3 w-45 h-12 bg-black text-white font-lexend font-medium rounded-full flex items-center gap-3">
+            Learn More
+            <Image 
+              src={"/arrow.png"}
+              alt="Arrow"
+              width={30}
+              height={30}
+            />
+          </Link>
+        </div>
+        <Image 
+          src={"/food2.png"}
+          alt="Food"
+          width={450}
+          height={400}
+        />
+      </div>
+
+      {/* Why Choose Us */}
+      <div className="flex flex-col justify-center items-center mt-10 mb-100">
         <h1 className="font-league font-normal text-5xl">Why Choose Us?</h1>
         <div className="mt-10 flex justify-center gap-55 font-league font-light text-xl">
           <div className="flex flex-col items-center w-55">
             <Image 
-              src={"/bowl-rice.png"}
+              src={"/noodles.png"}
               alt="Bowl of rice"
               width={100}
               height={100}
@@ -37,7 +66,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center w-55">
             <Image 
-              src={"/bowl-noodles.png"}
+              src={"/rice.png"}
               alt="Bowl of rice"
               width={100}
               height={100}
@@ -47,8 +76,8 @@ export default function Home() {
             <p className="font-extralight text-base">blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
           </div>
           <div className="flex flex-col items-center w-55">
-            <Image 
-              src={"/tachometer.png"}
+            <Image
+              src={"/speed.png"}
               alt="Bowl of rice"
               width={100}
               height={100}
@@ -59,6 +88,12 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Customer Reviews */}
+      <div className="">
+
+      </div>
+      
       <Footer />
     </>
   );
