@@ -78,7 +78,7 @@ async function verifyPlaceId(placeId: string) {
 }
 
 // Get Place ID from command line argument or environment variable
-const placeId = process.argv[2] || process.env.GOOGLE_PLACE_ID || 'ChIJ1RwAAQm3A4gRZaiCWXG8r8s';
+const placeId = process.argv[2] || process.env.GOOGLE_PLACE_ID;
 
 if (!placeId) {
   console.error('❌ Please provide a Place ID');
