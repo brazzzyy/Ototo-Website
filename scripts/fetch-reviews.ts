@@ -2,7 +2,7 @@
  * One-time script to fetch Google Reviews and save them to reviews-data.ts
  * 
  * Usage:
- * 1. Make sure you have .env.local with GOOGLE_PLACES_API_KEY and GOOGLE_PLACE_ID
+ * 1. Make sure you have .env with GOOGLE_PLACES_API_KEY and GOOGLE_PLACE_ID
  * 2. Run: pnpm tsx scripts/fetch-reviews.ts
  * 3. Review the generated data in app/reviews/reviews-data.ts
  * 4. Manually edit the file to curate which reviews to display
@@ -21,16 +21,16 @@ if (existsSync(envLocalPath)) {
   const result = config({ path: envLocalPath });
   envFileUsed = '.env.local';
   if (result.error) {
-    console.warn(`⚠️  Warning loading .env.local: ${result.error.message}`);
+    console.warn(`Warning loading .env.local: ${result.error.message}`);
   }
 } else if (existsSync(envPath)) {
   const result = config({ path: envPath });
   envFileUsed = '.env';
   if (result.error) {
-    console.warn(`⚠️  Warning loading .env: ${result.error.message}`);
+    console.warn(`Warning loading .env: ${result.error.message}`);
   }
 } else {
-  console.warn('⚠️  Warning: No .env.local or .env file found');
+  console.warn('Warning: No .env.local or .env file found');
 }
 
 interface GoogleReview {
@@ -77,25 +77,16 @@ async function fetchReviews(): Promise<ReviewsData | null> {
 
   // Debug output
   console.log(`📄 Looking for environment variables in: ${envFile}`);
-  console.log(`   GOOGLE_PLACES_API_KEY: ${apiKey ? '✅ Found (' + apiKey.substring(0, 10) + '...)' : '❌ Not found'}`);
-  console.log(`   GOOGLE_PLACE_ID: ${placeId ? '✅ Found (' + placeId + ')' : '❌ Not found'}\n`);
+  console.log(`   GOOGLE_PLACES_API_KEY: ${apiKey ? 'Found (' + apiKey.substring(0, 10) + '...)' : '❌ Not found'}`);
+  console.log(`   GOOGLE_PLACE_ID: ${placeId ? 'Found (' + placeId + ')' : 'Not found'}\n`);
 
   if (!apiKey) {
-    console.error(`❌ Error: GOOGLE_PLACES_API_KEY not found in ${envFile}`);
-    console.log('\n📝 Your .env file should look exactly like this (no quotes needed):');
-    console.log('   GOOGLE_PLACES_API_KEY=AIzaSyDSego2aLS9d3Oi78alxFvCjJS50UYt2JA');
-    console.log('   GOOGLE_PLACE_ID=ChIJ1RwAAQm3A4gRZaiCWXG8r8s\n');
-    console.log('   Make sure:');
-    console.log('   - No spaces around the = sign');
-    console.log('   - No quotes around the values');
-    console.log('   - Each variable is on its own line\n');
+    console.error(`Error: GOOGLE_PLACES_API_KEY not found in ${envFile}`);
     return null;
   }
 
   if (!placeId) {
-    console.error(`❌ Error: GOOGLE_PLACE_ID not found in ${envFile}`);
-    console.log('\n📝 Your .env file should contain:');
-    console.log('   GOOGLE_PLACE_ID=ChIJ1RwAAQm3A4gRZaiCWXG8r8s\n');
+    console.error(`Error: GOOGLE_PLACE_ID not found in ${envFile}`);
     return null;
   }
 
@@ -109,39 +100,18 @@ async function fetchReviews(): Promise<ReviewsData | null> {
     const data: GooglePlaceDetails = await response.json();
 
     if (data.status !== 'OK') {
-      console.error(`❌ API Error: ${data.status}`);
+      console.error(`API Error: ${data.status}`);
       
       // Show detailed error information
       if ((data as any).error_message) {
         console.error(`   Error Message: ${(data as any).error_message}`);
       }
       
-      // Provide specific help based on error
-      if (data.status === 'REQUEST_DENIED') {
-        console.error('\n🔧 This usually means one of these issues:');
-        console.error('   1. Places API is not enabled in your Google Cloud project');
-        console.error('   2. API key restrictions are blocking the request');
-        console.error('   3. API key doesn\'t have permission for Places API\n');
-        console.error('📝 How to fix:');
-        console.error('   1. Go to: https://console.cloud.google.com/');
-        console.error('   2. Select your project');
-        console.error('   3. Go to "APIs & Services" → "Library"');
-        console.error('   4. Search for "Places API" and click "Enable"');
-        console.error('   5. Go to "APIs & Services" → "Credentials"');
-        console.error('   6. Click on your API key');
-        console.error('   7. Under "API restrictions", make sure "Places API" is selected');
-        console.error('   8. Or temporarily set to "Don\'t restrict key" to test\n');
-      } else if (data.status === 'INVALID_REQUEST') {
-        console.error('\n🔧 This usually means:');
-        console.error('   - Place ID is invalid or incorrect');
-        console.error('   - Required fields parameter is wrong\n');
-      }
-      
       return null;
     }
 
     if (!data.result.reviews || data.result.reviews.length === 0) {
-      console.error('❌ No reviews found for this location.');
+      console.error('No reviews found for this location.');
       return null;
     }
 
@@ -161,13 +131,13 @@ async function fetchReviews(): Promise<ReviewsData | null> {
       totalReviews: data.result.user_ratings_total || reviews.length
     };
 
-    console.log(`✅ Successfully fetched ${reviews.length} reviews!`);
+    console.log(`Successfully fetched ${reviews.length} reviews!`);
     console.log(`   Average Rating: ${reviewsData.averageRating.toFixed(1)} ⭐`);
     console.log(`   Total Reviews: ${reviewsData.totalReviews}`);
 
     return reviewsData;
   } catch (error) {
-    console.error('❌ Error fetching reviews:', error);
+    console.error('Error fetching reviews:', error);
     return null;
   }
 }
@@ -221,12 +191,7 @@ async function main() {
   
   writeFileSync(filePath, fileContent, 'utf-8');
   
-  console.log(`\n✅ Reviews saved to: ${filePath}`);
-  console.log(`\n📝 Next steps:`);
-  console.log(`   1. Review the file: app/reviews/reviews-data.ts`);
-  console.log(`   2. Manually edit to select your best reviews`);
-  console.log(`   3. Remove or comment out reviews you don't want to display`);
-  console.log(`   4. The component will now use this static data (no API calls!)\n`);
+  console.log(`\n Reviews saved to: ${filePath}`);
 }
 
 main().catch(console.error);
