@@ -33,7 +33,7 @@ export default function NavBar() {
                     />
                 </Link>
                 <Link 
-                    className="group relative z-10 font-league cursor-pointer select-none ml-10" href={"/"}
+                    className="group relative z-10 font-league cursor-pointer select-none ml-10" href={"/contact"}
                 >
                     Contact
                     <span className="absolute bottom-0 left-1/2 h-0.5 w-0 -translate-x-1/2 bg-black transition-all duration-300 group-hover:w-full"></span>
@@ -45,12 +45,12 @@ export default function NavBar() {
                     <span className="absolute bottom-0 left-1/2 h-0.5 w-0 -translate-x-1/2 bg-black transition-all duration-300 group-hover:w-full"></span>
                 </Link>
                 <Link 
-                    className="group relative z-10 font-league cursor-pointer select-none" href={"/"}
+                    className="group relative z-10 font-league cursor-pointer select-none" href={"/about"}
                 >
                     About
                     <span className="absolute bottom-0 left-1/2 h-0.5 w-0 -translate-x-1/2 bg-black transition-all duration-300 group-hover:w-full"></span>
                 </Link>
             </ul>
         </nav>
-    )
+    );
 }

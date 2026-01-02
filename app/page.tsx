@@ -26,12 +26,14 @@ export default function Home() {
       <div className="flex justify-between items-center pr-20 pl-30 mb-40">
         <div className="flex flex-col">
           <span className="font-league font-semibold text-7xl mb-5">About Ototo</span>
-          <p className="w-90 mb-10 font-lexend font-light text-md">
+          <p className="w-110 mb-10 font-lexend font-light text-md">
               At <span className="font-medium">Ototo, </span> 
-              blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-              blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+              we are passionate about bringing the art of Japanese food to your
+              table. With a commitment to quality, authenticity, and exceptional
+              dining experiences, our restaurant is a haven for people who enjoy
+              food that is made fresh and with delicateness
           </p>
-          <Link href={"/"} className="px-6 py-3 w-45 h-12 bg-black text-white font-lexend font-medium rounded-full flex items-center gap-3">
+          <Link href={"/about"} className="px-6 py-3 w-45 h-12 bg-black text-white font-lexend font-medium rounded-full flex items-center gap-3">
             Learn More
             <Image 
               src={"/arrow.png"}
@@ -44,13 +46,13 @@ export default function Home() {
         <Image 
           src={"/food2.png"}
           alt="Food"
-          width={450}
+          width={500}
           height={400}
         />
       </div>
 
       {/* Why Choose Us */}
-      <div className="flex flex-col justify-center items-center mt-10 mb-100">
+      <div className="flex flex-col justify-center items-center mt-10 mb-80">
         <h1 className="font-league font-normal text-5xl">Why Choose Us?</h1>
         <div className="mt-10 flex justify-center gap-55 font-league font-light text-xl">
           <div className="flex flex-col items-center w-55">
@@ -90,10 +92,10 @@ export default function Home() {
       </div>
 
       {/* Customer Reviews */}
-      <div className="">
-
+      <div className="flex items-center justify-center mb-50">
+        <h1 className="font-lexend text-5xl font-normal">What Our Customers Say</h1>
       </div>
-      
+
       <Footer />
     </>
   );
