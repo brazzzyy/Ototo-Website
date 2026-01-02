@@ -20,7 +20,7 @@ if (existsSync(envLocalPath)) {
   config({ path: envPath });
   envFileUsed = '.env';
 } else {
-  console.warn('⚠️  Warning: No .env.local or .env file found');
+  console.warn('Warning: No .env.local or .env file found');
 }
 
 async function verifyPlaceId(placeId: string) {
@@ -28,8 +28,8 @@ async function verifyPlaceId(placeId: string) {
   const envFile = envFileUsed || '.env or .env.local';
 
   if (!apiKey) {
-    console.error(`❌ Error: GOOGLE_PLACES_API_KEY not found in ${envFile}`);
-    console.log(`\n📝 Please add your API key to your .env file first:`);
+    console.error(`Error: GOOGLE_PLACES_API_KEY not found in ${envFile}`);
+    console.log(`\n Please add your API key to your .env file first:`);
     console.log('   GOOGLE_PLACES_API_KEY=your_api_key_here\n');
     return;
   }
@@ -52,28 +52,28 @@ async function verifyPlaceId(placeId: string) {
       console.log(`   Reviews Available: ${data.result.reviews?.length || 0}\n`);
       
       if (data.result.reviews && data.result.reviews.length > 0) {
-        console.log('✅ Great! Reviews are available for this location.\n');
+        console.log('Great! Reviews are available for this location.\n');
       } else {
-        console.log('⚠️  Warning: No reviews found for this location.\n');
+        console.log('Warning: No reviews found for this location.\n');
       }
     } else if (data.status === 'INVALID_REQUEST') {
-      console.error('❌ Invalid Place ID format');
+      console.error('Invalid Place ID format');
       console.log('   Please check that your Place ID is correct.\n');
     } else if (data.status === 'REQUEST_DENIED') {
-      console.error('❌ API request denied');
+      console.error('API request denied');
       console.log('   This usually means:');
       console.log('   1. Your API key is incorrect');
       console.log('   2. Places API is not enabled');
       console.log('   3. API key restrictions are blocking the request');
       console.log('\n   Error message:', data.error_message || 'Unknown error\n');
     } else {
-      console.error(`❌ Error: ${data.status}`);
+      console.error(`Error: ${data.status}`);
       if (data.error_message) {
         console.log(`   ${data.error_message}\n`);
       }
     }
   } catch (error) {
-    console.error('❌ Error verifying Place ID:', error);
+    console.error('Error verifying Place ID:', error);
   }
 }
 
@@ -81,7 +81,7 @@ async function verifyPlaceId(placeId: string) {
 const placeId = process.argv[2] || process.env.GOOGLE_PLACE_ID;
 
 if (!placeId) {
-  console.error('❌ Please provide a Place ID');
+  console.error('Please provide a Place ID');
   console.log('   Usage: pnpm tsx scripts/verify-place-id.ts [PLACE_ID]');
   console.log('   Or set GOOGLE_PLACE_ID in .env.local\n');
   process.exit(1);

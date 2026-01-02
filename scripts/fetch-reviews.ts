@@ -77,7 +77,7 @@ async function fetchReviews(): Promise<ReviewsData | null> {
 
   // Debug output
   console.log(`📄 Looking for environment variables in: ${envFile}`);
-  console.log(`   GOOGLE_PLACES_API_KEY: ${apiKey ? 'Found (' + apiKey.substring(0, 10) + '...)' : '❌ Not found'}`);
+  console.log(`   GOOGLE_PLACES_API_KEY: ${apiKey ? 'Found (' + apiKey.substring(0, 10) + '...)' : 'Not found'}`);
   console.log(`   GOOGLE_PLACE_ID: ${placeId ? 'Found (' + placeId + ')' : 'Not found'}\n`);
 
   if (!apiKey) {
