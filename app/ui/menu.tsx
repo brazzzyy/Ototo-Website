@@ -1,5 +1,4 @@
 import Image from "next/image"
-import Footer from "./footer"
 
 export default function Menu() {
     return (
@@ -12,6 +11,7 @@ export default function Menu() {
                     width={1200}
                     className="w-full h-auto pointer-events-none select-none"
                     priority
+                    loading="eager"
                 />
                 <Image 
                     src={"/pge 2.jpg"}
@@ -20,6 +20,7 @@ export default function Menu() {
                     width={1200}
                     className="w-full h-auto pointer-events-none select-none"
                     priority
+                    loading="eager"
                 />
                 <Image 
                     src={"/pge 3.jpg"}
@@ -27,7 +28,7 @@ export default function Menu() {
                     height={900}
                     width={1200}
                     className="w-full h-auto pointer-events-none select-none"
-                    priority
+                    loading="lazy"
                 />
                 <Image 
                     src={"/pges 4.jpg"}
@@ -35,7 +36,7 @@ export default function Menu() {
                     height={900}
                     width={1200}
                     className="w-full h-auto pointer-events-none select-none"
-                    priority
+                    loading="lazy"
                 />
                 <Image 
                     src={"/pg 5.jpg"}
@@ -43,7 +44,7 @@ export default function Menu() {
                     height={900}
                     width={1200}
                     className="w-full h-auto pointer-events-none select-none"
-                    priority
+                    loading="lazy"
                 />
                 <Image 
                     src={"/pge 6.jpg"}
@@ -51,7 +52,7 @@ export default function Menu() {
                     height={900}
                     width={1200}
                     className="w-full h-auto pointer-events-none select-none"
-                    priority
+                    loading="lazy"
                 />
             </div>
             <div className="flex flex-col justify-center items-center mb-20">
@@ -61,6 +62,7 @@ export default function Menu() {
                     width={500}
                     height={500}
                     className="-mt-7 mb-5 pointer-events-none select-none"
+                    loading="lazy"
                 />
                 <Image 
                     src={"/menu_warning.png"}
@@ -68,9 +70,9 @@ export default function Menu() {
                     width={800}
                     height={800}
                     className="pointer-events-none select-none"
+                    loading="lazy"
                 />
             </div>
-            <Footer />
         </>
     )
 }

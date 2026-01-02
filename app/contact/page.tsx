@@ -1,6 +1,4 @@
 "use client";
-import NavBar from "../ui/navbar";
-import Footer from "../ui/footer";
 import Image from "next/image";
 import { useState } from "react";
 import { submitContactForm } from "./actions";
@@ -25,15 +23,14 @@ export default function ContactPage() {
 
     return (
         <>
-            <NavBar />
-
             <div className="flex flex-col md:flex-row mt-30 mb-30 gap-25 justify-center items-start px-8 max-w-7xl mx-auto">
                 <Image 
                     src={"/food2.png"}                
                     alt="Food"
-                    height={450}
-                    width={450}
+                    height={500}
+                    width={502}
                     className="hidden md:block"
+                    loading="lazy"
                 />
                 
                 <div className="flex-1 max-w-2xl">
@@ -115,8 +112,6 @@ export default function ContactPage() {
                     </form>
                 </div>
             </div>
-
-            <Footer />
         </>
     );
 }

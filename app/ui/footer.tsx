@@ -7,7 +7,7 @@ export default function Footer() {
         <>
             <div className="p-15 h-65 bg-gray-900 flex items-center gap-4 justify-between pt-[-10]">
                 {/* Logo + Description */}
-                <div className="flex flex-col -mt-25">
+                <div className="flex flex-col -mt-15">
                     <Image 
                         src={"/Ototo_footer.png"}
                         alt="Logo image"
@@ -34,8 +34,8 @@ export default function Footer() {
                 {/* Schedule */}
                 <div className="-mt-18 mr-60">
                     <span className="font-league font-normal text-white text-3xl">Schedule</span>
-                    <p className="font-league font-light text-gray-300 text-medium">Monday & Thursday CLOSED</p>
-                    <p className="font-league font-light text-gray-300 text-medium">Tuesday & Wednesday 11am-pm</p>
+                    <p className="font-league font-light text-gray-300 text-medium">Monday CLOSED</p>
+                    <p className="font-league font-light text-gray-300 text-medium">Tuesday, Wednesday, and Thursday 11am-9pm</p>
                     <p className="font-league font-light text-gray-300 text-medium">Friday-Sunday 11am-9pm</p>
                 </div>
             </div> 

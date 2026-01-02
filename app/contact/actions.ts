@@ -2,7 +2,9 @@
 
 import { Resend } from 'resend';
 
-const CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'ototoWI@outlook.com';
+// REMINDER: Once domain has been bought and verified
+// change this to 'ototoWI@outlook.com' 
+const CONTACT_EMAIL = 'lor528152@outlook.com';
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 
 export async function submitContactForm(formData: FormData) {

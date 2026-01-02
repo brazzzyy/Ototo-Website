@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import Footer from "./ui/footer";
+import Reviews from "./ui/reviews";
 
 export default function Home() {
   return (
@@ -48,6 +48,7 @@ export default function Home() {
           alt="Food"
           width={500}
           height={400}
+          loading="lazy"
         />
       </div>
 
@@ -55,48 +56,50 @@ export default function Home() {
       <div className="flex flex-col justify-center items-center mt-10 mb-80">
         <h1 className="font-league font-normal text-5xl">Why Choose Us?</h1>
         <div className="mt-10 flex justify-center gap-55 font-league font-light text-xl">
-          <div className="flex flex-col items-center w-55">
+          <div className="flex flex-col items-center w-75">
             <Image 
               src={"/noodles.png"}
-              alt="Bowl of rice"
+              alt="Noodles"
               width={100}
               height={100}
               className="mb-5"
+              loading="lazy"
             />
             <span className="text-3xl">Fresh</span>
-            <p className="font-extralight text-base">We offer the best and blah blah blah blah blah</p>
+            <p className="font-extralight text-base">Fresh ingredients sourced daily for every dish.</p>
           </div>
-          <div className="flex flex-col items-center w-55">
+          <div className="flex flex-col items-center w-70">
             <Image 
               src={"/rice.png"}
               alt="Bowl of rice"
               width={100}
               height={100}
               className="mb-5"
+              loading="lazy"
             />
             <span className="text-3xl">Quality</span>
-            <p className="font-extralight text-base">blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
+            <p className="font-extralight text-base">Authentic Japanese cuisine with traditional techniques and careful attention to detail.</p>
           </div>
-          <div className="flex flex-col items-center w-55">
+          <div className="flex flex-col items-center w-70">
             <Image
               src={"/speed.png"}
-              alt="Bowl of rice"
+              alt="Speed image"
               width={100}
               height={100}
               className="mb-5"
+              loading="lazy"
             />
             <span className="text-3xl">Fast</span>
-            <p className="font-extralight text-base">blah blah blah blah blah blah blah blah blah</p>
+            <p className="font-extralight text-base">Quick service without sacrificing quality.</p>
           </div>
         </div>
       </div>
 
       {/* Customer Reviews */}
-      <div className="flex items-center justify-center mb-50">
-        <h1 className="font-lexend text-5xl font-normal">What Our Customers Say</h1>
+      <div className="flex flex-col items-center justify-center mb-50 mt-20">
+        <h1 className="font-lexend text-5xl font-normal mb-16">What Our Customers Say</h1>
+        <Reviews />
       </div>
-
-      <Footer />
     </>
   );
 }
