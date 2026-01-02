@@ -29,7 +29,7 @@ export default function Footer() {
                     <span className="font-league font-normal text-white text-3xl">Information</span>
                     <p className="font-league font-light text-gray-300 text-medium">205 N Richmond St, Appleton, WI 54911</p>
                     <p className="font-league font-light text-gray-300 text-medium">{"(920)-815-3039"}</p>
-                    <p className="font-league font-light text-gray-300 text-medium">Email: ototowi@outlook.com</p>
+                    <p className="font-league font-light text-gray-300 text-medium">Email: ototoWI@outlook.com</p>
                 </div>
                 {/* Schedule */}
                 <div className="-mt-18 mr-60">
