@@ -88,7 +88,7 @@ async function fetchGoogleReviewsAPI(placeId: string, apiKey: string): Promise<{
       relativeTime: review.relative_time_description,
       text: review.text,
       time: review.time * 1000 // Convert to milliseconds
-    }));
+    })).slice(0, 6); // Limit to 6 reviews
 
     const successResult: { success: true; data: ReviewsData } = {
       success: true,
@@ -119,13 +119,12 @@ async function fetchGoogleReviewsAPI(placeId: string, apiKey: string): Promise<{
 /**
  * Fetches Google Reviews using the Places API
  * 
- * ⚠️ IMPORTANT: This function makes EXACTLY ONE API call per Place ID.
+ * IMPORTANT: This function makes EXACTLY ONE API call per Place ID.
  * Results are cached in memory to prevent any duplicate calls, even if
  * this function is called multiple times.
  * 
- * NOTE: Your website uses static reviews data from reviews-data.ts.
- * This function is only needed if you want to programmatically fetch
- * reviews (e.g., for the fetch-reviews.ts script).
+ * NOTE: website uses static reviews data from reviews-data.ts.
+ * This function makes an API call to Google Maps API on every script execution
  * 
  * @param placeId - The Google Place ID for your restaurant
  * @returns Reviews data or error

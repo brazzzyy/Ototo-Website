@@ -3,7 +3,7 @@ import Image from "next/image"
 export default function Menu() {
     return (
         <>
-            <div className="mt-17 grid grid-cols-2">
+            <div className="mt-14 md:mt-17 grid grid-cols-1 md:grid-cols-2">
                 <Image 
                     src={"/pg 1.jpg"}
                     alt="menu picture"
@@ -55,13 +55,13 @@ export default function Menu() {
                     loading="lazy"
                 />
             </div>
-            <div className="flex flex-col justify-center items-center mb-20">
+            <div className="flex flex-col justify-center items-center mb-10 md:mb-20 px-4">
                 <Image
                     src={"/menu_legend.png"}
                     alt="Menu Legend"
                     width={500}
                     height={500}
-                    className="-mt-7 mb-5 pointer-events-none select-none"
+                    className="-mt-4 md:-mt-7 mb-4 md:mb-5 pointer-events-none select-none w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] h-auto"
                     loading="lazy"
                 />
                 <Image 
@@ -69,7 +69,7 @@ export default function Menu() {
                     alt="Menu alergies warning"
                     width={800}
                     height={800}
-                    className="pointer-events-none select-none"
+                    className="pointer-events-none select-none w-full max-w-[400px] sm:max-w-[600px] md:max-w-[800px] h-auto"
                     loading="lazy"
                 />
             </div>

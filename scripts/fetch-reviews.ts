@@ -75,11 +75,6 @@ async function fetchReviews(): Promise<ReviewsData | null> {
 
   const envFile = envFileUsed || '.env or .env.local';
 
-  // Debug output
-  console.log(`📄 Looking for environment variables in: ${envFile}`);
-  console.log(`   GOOGLE_PLACES_API_KEY: ${apiKey ? 'Found (' + apiKey.substring(0, 10) + '...)' : 'Not found'}`);
-  console.log(`   GOOGLE_PLACE_ID: ${placeId ? 'Found (' + placeId + ')' : 'Not found'}\n`);
-
   if (!apiKey) {
     console.error(`Error: GOOGLE_PLACES_API_KEY not found in ${envFile}`);
     return null;
@@ -123,7 +118,7 @@ async function fetchReviews(): Promise<ReviewsData | null> {
       relativeTime: review.relative_time_description,
       text: review.text,
       time: review.time * 1000
-    }));
+    })).slice(0, 6); // Limit to 6 reviews
 
     const reviewsData: ReviewsData = {
       reviews,

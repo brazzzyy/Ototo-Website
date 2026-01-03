@@ -1,10 +1,13 @@
 /**
  * Static Reviews Data
  * 
+ * This file contains your curated reviews. You can manually edit this file
+ * to select which reviews to display, or use the fetch script to update it.
+ * 
  * To fetch fresh reviews from Google, run:
  * pnpm tsx scripts/fetch-reviews.ts
  * 
- * Last updated: 2026-01-02T02:54:27.434Z
+ * Last updated: 2026-01-02T19:22:38.408Z
  */
 
 import { Review, ReviewsData } from './actions';
@@ -55,8 +58,17 @@ export const reviewsData: ReviewsData = {
       relativeTime: "a month ago",
       text: "I went with four of my friends, it was incredible! The food was perfect and the staff were kind and personable. Quiet atmosphere and plenty of vegan options.",
       time: 1762732572000
+    },
+    {
+      authorName: "Shelby R",
+      authorUrl: "https://www.google.com/maps/contrib/116759549840423239472/reviews?hl=en-US",
+      profilePhotoUrl: "https://lh3.googleusercontent.com/a-/ALV-UjUH_7Lo_-wH55FqAtMdUORqL4YuBpG4H9YOKUpusFAiRPcnpbp0=w144-h144-p-rp-mo-ba2-br100",
+      rating: 5,
+      relativeTime: "2 months ago",
+      text: "I tried Ototo this evening for dinner and it was absolutely delicious. The ramen was phenomenal, my waitress was incredibly sweet, and the atmosphere was very cute. I highly recommend!!",
+      time: 1762732572000
     }
   ],
   averageRating: 4.7,
-  totalReviews: 148
+  totalReviews: 149
 };

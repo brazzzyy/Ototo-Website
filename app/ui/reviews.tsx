@@ -17,7 +17,6 @@ export default function Reviews() {
     ));
   };
 
-  // Use static reviews data (no API calls needed!)
   const data: ReviewsData = reviewsData;
 
   if (!data || data.reviews.length === 0) {
@@ -36,16 +35,16 @@ export default function Reviews() {
   return (
     <div className="w-full">
       {/* Overall Rating Summary */}
-      <div className="flex flex-col items-center mb-12">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="text-5xl font-league font-semibold">
+      <div className="flex flex-col items-center mb-8 md:mb-12">
+        <div className="flex items-center gap-2 md:gap-3 mb-2">
+          <div className="text-3xl sm:text-4xl md:text-5xl font-league font-semibold">
             {data.averageRating.toFixed(1)}
           </div>
           <div className="flex flex-col">
-            <div className="flex text-2xl">
+            <div className="flex text-lg sm:text-xl md:text-2xl">
               {renderStars(Math.round(data.averageRating))}
             </div>
-            <p className="font-lexend text-sm text-gray-600">
+            <p className="font-lexend text-xs sm:text-sm text-gray-600">
               Based on {data.totalReviews} {data.totalReviews === 1 ? 'review' : 'reviews'}
             </p>
           </div>
@@ -53,36 +52,36 @@ export default function Reviews() {
       </div>
 
       {/* Reviews Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-8 max-w-7xl mx-auto">
-        {data.reviews.map((review, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto">
+        {data.reviews.slice(0, 6).map((review, index) => (
           <div
             key={index}
-            className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+            className="bg-white border border-gray-200 rounded-lg p-4 sm:p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow"
           >
             {/* Review Header */}
-            <div className="flex items-start gap-4 mb-4">
+            <div className="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
               {review.profilePhotoUrl ? (
                 <Image
                   src={review.profilePhotoUrl}
                   alt={review.authorName}
                   width={48}
                   height={48}
-                  className="rounded-full object-cover"
+                  className="rounded-full object-cover w-10 h-10 md:w-12 md:h-12 shrink-0"
                   loading="lazy"
                 />
               ) : (
-                <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center">
-                  <span className="font-lexend font-medium text-gray-600">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-200 flex items-center justify-center shrink-0">
+                  <span className="font-lexend font-medium text-gray-600 text-sm md:text-base">
                     {review.authorName.charAt(0).toUpperCase()}
                   </span>
                 </div>
               )}
-              <div className="flex-1">
-                <h3 className="font-lexend font-semibold text-lg mb-1">
+              <div className="flex-1 min-w-0">
+                <h3 className="font-lexend font-semibold text-base md:text-lg mb-1 truncate">
                   {review.authorName}
                 </h3>
                 <div className="flex items-center gap-2 mb-1">
-                  <div className="flex text-sm">
+                  <div className="flex text-xs md:text-sm">
                     {renderStars(review.rating)}
                   </div>
                 </div>
@@ -93,7 +92,7 @@ export default function Reviews() {
             </div>
 
             {/* Review Text */}
-            <p className="font-lexend font-light text-sm text-gray-700 leading-relaxed line-clamp-4">
+            <p className="font-lexend font-light text-xs sm:text-sm text-gray-700 leading-relaxed line-clamp-4">
               {review.text}
             </p>
 
@@ -113,12 +112,12 @@ export default function Reviews() {
       </div>
 
       {/* Google Reviews Link */}
-      <div className="flex justify-center mt-12">
+      <div className="flex justify-center mt-8 md:mt-12 px-4">
         <a
           href={`https://www.google.com/search?sca_esv=18e49b020ebfc0ba&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E1RZIDQ7oe5OFyiltHGCBto0jtQeXBvAw3cQx2eA16eTyWApE5y613dobLdTydp7w_WJ11qGe8BzUSOXAEMNiIvR-Q2e&q=Ot%C5%8Dto+Reviews&sa=X&ved=2ahUKEwi8leCW7uuRAxXPw_ACHfIEOlsQ0bkNegQIMhAD&cshid=1767322725919210&biw=1512&bih=861&dpr=2`}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-lexend font-medium text-sm text-gray-700 hover:text-black transition-colors underline"
+          className="font-lexend font-medium text-xs sm:text-sm text-gray-700 hover:text-black transition-colors underline text-center"
         >
           See all reviews on Google
         </a>
