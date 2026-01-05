@@ -27,7 +27,7 @@ export default function About() {
                     </h1>
                     
                     <p>
-                        Yia Thao is the proud owner of Ototo and stepped into ownership in September 2023 under 
+                        Yia Thao is the proud owner of Ototo and stepped into ownership in September 2025 under 
                         new management. Her decision to take on the restaurant was driven by a genuine love for cooking and a belief 
                         that food has the power to bring people together in meaningful ways. For Yia, meals are more than something to be served. 
                         They are moments that create connection and leave a lasting impression.

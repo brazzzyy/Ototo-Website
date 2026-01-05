@@ -7,11 +7,11 @@ import Footer from "./ui/footer";
 // Keep all your hardcoded strings in one place
 const CONFIG = {
   name: "Ototo",
-  cuisine: "Japanese", 
+  cuisine: "Japanese Ramen & Comfort Food", 
   domain: "https://www.ototoappleton.com",
   description: "Authentic Japanese dining in the heart of Appleton. Serving fresh ramen, and craft cocktails.",
   address: {
-    street: "205 N Richmond St",
+    street: "205 N Richmond Street",
     city: "Appleton",
     state: "WI",
     zip: "54911",
@@ -39,6 +39,14 @@ export const metadata: Metadata = {
     siteName: CONFIG.name,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/Ototo_Logo.png", // Or better: a photo of your Ramen ("/ramen-share.jpg")
+        width: 1200,
+        height: 630,
+        alt: "Ototo Ramen in Appleton",
+      },
+    ],
   },
 };
 
