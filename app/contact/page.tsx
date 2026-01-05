@@ -29,7 +29,7 @@ export default function ContactPage() {
                     alt="Food"
                     height={500}
                     width={502}
-                    className="hidden md:block w-full max-w-[300px] lg:max-w-[400px] xl:max-w-[502px] h-auto mx-auto md:mx-0"
+                    className="hidden md:block w-full max-w-[300px] lg:max-w-[400px] xl:max-w-[502px] h-auto mx-auto md:mx-0 rounded-lg"
                     loading="lazy"
                 />
                 

@@ -36,8 +36,7 @@ export default function Footer() {
                 <div className="w-full md:w-auto lg:mr-60">
                     <span className="font-league font-normal text-white text-xl md:text-2xl lg:text-3xl block mb-2 md:mb-3">Schedule</span>
                     <p className="font-league font-light text-gray-300 text-sm md:text-base lg:text-medium mb-1 md:mb-2">Monday CLOSED</p>
-                    <p className="font-league font-light text-gray-300 text-sm md:text-base lg:text-medium mb-1 md:mb-2">Tuesday, Wednesday, and Thursday 11am-9pm</p>
-                    <p className="font-league font-light text-gray-300 text-sm md:text-base lg:text-medium">Friday-Sunday 11am-9pm</p>
+                    <p className="font-league font-light text-gray-300 text-sm md:text-base lg:text-medium mb-1 md:mb-2">Tuesday-Sunday 11am-8pm</p>
                 </div>
             </div> 
             {/* Website Privacy Terms */}
