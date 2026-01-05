@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "./ui/navbar";
 import Footer from "./ui/footer";
@@ -10,18 +9,19 @@ const CONFIG = {
   name: "Ototo",
   cuisine: "Japanese", 
   domain: "https://www.ototoappleton.com",
-  description: "Authentic Japanese dining in the heart of Appleton. Serving fresh sushi, ramen, and craft cocktails.",
+  description: "Authentic Japanese dining in the heart of Appleton. Serving fresh ramen, and craft cocktails.",
   address: {
-    street: "123 College Ave",
+    street: "205 N Richmond St",
     city: "Appleton",
     state: "WI",
     zip: "54911",
-    mapLink: "https://maps.app.goo.gl/YOUR_LINK_HERE" // Helpful for you to find later
+    mapLink: "https://www.google.com/maps/place/Ot%C5%8Dto/@44.263218,-88.4186325,16z/data=!3m1!4b1!4m6!3m5!1s0x8803b70901001cd5:0xcbafbc715982a865!8m2!3d44.2632142!4d-88.4160576!16s%2Fg%2F11vt8dkhwn?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D" // Helpful for you to find later
   },
-  phone: "+19201234567"
+  phone: "+19208153039"
 };
 
-// --- 3. METADATA (Server-Side Optimized) ---
+
+// --- 2. METADATA (Server-Side Optimized) ---
 export const metadata: Metadata = {
   metadataBase: new URL(CONFIG.domain), // Fixes all relative path issues automatically
   title: {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   description: CONFIG.description,
   icons: {
-    icon: "/Ototo_Logo.png", // Must be in /public folder
+    icon: "/Ototo_Logo.png", //
   },
   openGraph: {
     title: CONFIG.name,
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
 };
 
-// --- 4. SCHEMA GENERATOR ---
+// --- 3. SCHEMA GENERATOR ---
 // Keeps the layout clean. 
 // Using a standard <script> is actually faster for crawlers than next/script for JSON-LD.
 const jsonLd = {
@@ -64,7 +64,7 @@ const jsonLd = {
   priceRange: "$$", // $, $$, $$$, or $$$$
 };
 
-// --- 5. ROOT LAYOUT ---
+// --- 4. ROOT LAYOUT ---
 export default function RootLayout({
   children,
 }: Readonly<{

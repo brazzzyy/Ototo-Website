@@ -27,7 +27,7 @@ export default function Home() {
         <div className="flex flex-col w-full md:w-auto md:max-w-lg lg:max-w-xl">
           <span className="font-league font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 md:mb-5">About Ototo</span>
           <p className="w-full md:w-auto mb-6 md:mb-10 font-lexend font-light text-sm sm:text-base md:text-md">
-              At <span className="font-medium">Ototo, </span> 
+              Looking for the best Japanese Cuisine Restaurant in Appleton? At <span className="font-medium">Ototo, </span> 
               we are passionate about bringing the art of Japanese food to your
               table. With a commitment to quality, authenticity, and exceptional
               dining experiences, our restaurant is a haven for people who enjoy

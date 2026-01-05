@@ -7,7 +7,7 @@ export default function Footer() {
         <>
             <div className="p-6 md:p-10 lg:p-15 bg-gray-900 flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 lg:gap-12 justify-between">
                 {/* Logo + Description */}
-                <div className="flex flex-col w-full md:w-auto">
+                <div className="flex flex-col w-full md:w-auto -mt-3">
                     <Image 
                         src={"/Ototo_footer.png"}
                         alt="Logo image"
