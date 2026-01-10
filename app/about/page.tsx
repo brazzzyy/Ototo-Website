@@ -3,10 +3,7 @@ import Image from "next/image";
 export default function About() {
     return (
         <section className="container mx-auto px-4 py-12 lg:py-24">
-            {/* Main Flex Container: Stack vertically on mobile, horizontally on large screens */}
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20">
-                
-                {/* Image Wrapper: Constraints width for aesthetics but allows shrinking */}
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20 mt-10 mb-15">
                 <div className="w-full max-w-[500px] shrink-0">
                     <Image 
                         src={"/social2.png"}
@@ -14,14 +11,11 @@ export default function About() {
                         width={500}
                         height={400}
                         className="w-full h-auto object-cover rounded-lg shadow-sm"
-                        priority // Optional: loads image faster if it's "above the fold"
+                        priority
                     />
                 </div>
 
-                {/* Text Content */}
-                <div className="flex flex-col gap-5 w-full max-w-2xl lg:w-1/2 font-league text-lg md:text-xl font-light text-gray-800">
-                    
-                    {/* Heading: Centered on mobile, Left-aligned on desktop */}
+                <div className="flex flex-col gap-5 w-full max-w-2xl lg:w-1/2 font-league text-lg md:text-xl font-light">
                     <h1 className="font-medium text-4xl md:text-5xl text-center lg:text-left mb-2">
                         About Owner
                     </h1>
