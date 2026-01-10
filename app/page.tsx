@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       {/* Home Banner */}
-      <div className="relative mb-41 mt-14 md:mt-0 flex flex-col justify-center items-center px-4 pb-20 min-h-[247px] md:min-h-[500px] lg:min-h-[700px]">
+      <div className="relative mb-41 mt-14 md:mt-0 flex flex-col justify-center items-center px-4 pb-20 min-h-61.75 md:min-h-125 lg:min-h-175">
         <p className="font-league font-medium text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl z-10 text-white text-center">美味しい</p>
         <span className="font-league font-extralight text-sm sm:text-base md:text-lg lg:text-xl z-10 text-white text-center px-4">Refined. Authentic. Unforgettable.</span>
         <Link className="bg-white font-lexend font-normal z-10 px-4 py-2 md:px-6 md:py-3 mt-4 md:mt-6 cursor-pointer text-sm md:text-base" href={"/menu"}>Discover Menu</Link>
@@ -40,7 +40,7 @@ export default function Home() {
               alt="Arrow"
               width={24}
               height={24}
-              className="md:w-[30px] md:h-[30px]"
+              className="md:w-7.5 md:h-7.5"
             />
           </Link>
         </div>
@@ -50,7 +50,7 @@ export default function Home() {
             alt="Food"
             width={500}
             height={400}
-            className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] h-auto"
+            className="w-full max-w-75 sm:max-w-100 md:max-w-125 h-auto"
             loading="lazy"
           />
         </div>
@@ -60,7 +60,7 @@ export default function Home() {
       <div className="flex flex-col justify-center items-center mt-37 md:mt-50 mb-20 md:mb-40 px-4">
         <h1 className="font-league font-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center">Why Choose Us?</h1>
         <div className="mt-6 md:mt-10 flex flex-col sm:flex-row justify-center gap-8 md:gap-12 lg:gap-16 xl:gap-55 font-league font-light text-base md:text-lg lg:text-xl">
-          <div className="flex flex-col items-center w-full sm:w-auto sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px]">
+          <div className="flex flex-col items-center w-full sm:w-auto sm:max-w-50 md:max-w-62.5 lg:max-w-75">
             <Image 
               src={"/noodles.png"}
               alt="Noodles"
@@ -72,7 +72,7 @@ export default function Home() {
             <span className="text-xl md:text-2xl lg:text-3xl mb-2">Fresh</span>
             <p className="font-extralight text-sm md:text-base text-center">Fresh ingredients sourced daily for every dish.</p>
           </div>
-          <div className="flex flex-col items-center w-full sm:w-auto sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px]">
+          <div className="flex flex-col items-center w-full sm:w-auto sm:max-w-50 md:max-w-62.5 lg:max-w-75">
             <Image 
               src={"/rice.png"}
               alt="Bowl of rice"
@@ -84,7 +84,7 @@ export default function Home() {
             <span className="text-xl md:text-2xl lg:text-3xl mb-2">Quality</span>
             <p className="font-extralight text-sm md:text-base text-center">Authentic Japanese cuisine with traditional techniques and careful attention to detail.</p>
           </div>
-          <div className="flex flex-col items-center w-full sm:w-auto sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px]">
+          <div className="flex flex-col items-center w-full sm:w-auto sm:max-w-50 md:max-w-62.5 lg:max-w-75">
             <Image
               src={"/speed.png"}
               alt="Speed image"

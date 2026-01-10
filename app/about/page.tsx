@@ -4,7 +4,7 @@ export default function About() {
     return (
         <section className="container mx-auto px-4 py-12 lg:py-24">
             <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20 mt-10 mb-15">
-                <div className="w-full max-w-[500px] shrink-0">
+                <div className="w-full max-w-125 shrink-0">
                     <Image 
                         src={"/social2.png"}
                         alt="Yia Thao, owner of Ototo"

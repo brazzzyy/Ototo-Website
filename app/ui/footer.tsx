@@ -13,7 +13,7 @@ export default function Footer() {
                         alt="Logo image"
                         width={180}
                         height={180}
-                        className="md:w-40 lg:w-[180px] object-contain"
+                        className="md:w-40 lg:w-45 object-contain"
                     />
                     <p className="font-league font-extralight text-white ml-2 md:ml-3 text-xs md:text-sm lg:text-base mt-2">Refined. Authenthic. Unforgettable.</p>
                     <Link href={"https://www.facebook.com/profile.php?id=61555476440699"} target="_blank" rel="noopener noreferrer" className="w-fit">

@@ -23,13 +23,13 @@ export default function ContactPage() {
 
     return (
         <>
-            <div className="flex flex-col md:flex-row mt-14 md:mt-18 lg:mt-30 mb-10 md:mb-20 lg:mb-30 gap-8 md:gap-12 lg:gap-25 justify-center items-start px-4 sm:px-6 md:px-8 max-w-7xl mx-auto">
+            <div className="flex flex-col md:flex-row mt-20 md:mt-18 lg:mt-30 mb-10 md:mb-20 lg:mb-30 gap-8 md:gap-12 lg:gap-25 justify-center items-start px-4 sm:px-6 md:px-8 max-w-7xl mx-auto">
                 <Image 
                     src={"/food2.png"}                
                     alt="Food"
                     height={500}
                     width={502}
-                    className="hidden md:block w-full max-w-[300px] lg:max-w-[400px] xl:max-w-[502px] h-auto mx-auto md:mx-0 rounded-lg"
+                    className="hidden md:block w-full max-w-75 lg:max-w-100 xl:max-w-125.5 h-auto mx-auto md:mx-0 rounded-lg"
                     loading="lazy"
                 />
                 
