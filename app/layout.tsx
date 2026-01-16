@@ -25,7 +25,7 @@ const CONFIG = {
 export const metadata: Metadata = {
   metadataBase: new URL(CONFIG.domain), // Fixes all relative path issues automatically
   title: {
-    default: `${CONFIG.name} | ${CONFIG.cuisine} in ${CONFIG.address.city}, ${CONFIG.address.state}`,
+    default: `${CONFIG.name} | ${CONFIG.address.city}, ${CONFIG.address.state}`,
     template: `%s | ${CONFIG.name}`,
   },
   description: CONFIG.description,
@@ -51,8 +51,6 @@ export const metadata: Metadata = {
 };
 
 // --- 3. SCHEMA GENERATOR ---
-// Keeps the layout clean. 
-// Using a standard <script> is actually faster for crawlers than next/script for JSON-LD.
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",

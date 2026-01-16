@@ -46,11 +46,11 @@ export default function Home() {
         </div>
         <div className="w-full md:w-auto flex justify-center md:justify-end">
           <Image 
-            src={"/food2.png"}
+            src={"/ototo_inside1.jpeg"}
             alt="Food"
-            width={500}
+            width={550}
             height={400}
-            className="w-full max-w-75 sm:max-w-100 md:max-w-125 h-auto"
+            className="w-full max-w-75 sm:max-w-100 md:max-w-135 h-auto"
             loading="lazy"
           />
         </div>
