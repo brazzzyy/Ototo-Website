@@ -6,7 +6,7 @@ export default function About() {
             <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20 mt-10 mb-15">
                 <div className="w-full max-w-125 shrink-0">
                     <Image 
-                        src={"/social2.png"}
+                        src={"/ototo_inside2.JPEG"}
                         alt="Yia Thao, owner of Ototo"
                         width={500}
                         height={400}
