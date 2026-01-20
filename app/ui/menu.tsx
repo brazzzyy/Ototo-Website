@@ -11,7 +11,6 @@ export default function Menu() {
                     width={1200}
                     className="w-full h-auto pointer-events-none select-none"
                     priority
-                    loading="eager"
                 />
                 <Image 
                     src={"/pge 2.jpg"}
@@ -20,7 +19,6 @@ export default function Menu() {
                     width={1200}
                     className="w-full h-auto pointer-events-none select-none"
                     priority
-                    loading="eager"
                 />
                 <Image 
                     src={"/pge 3.jpg"}

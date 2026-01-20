@@ -18,6 +18,7 @@ export default function Home() {
             height={200}
             className="absolute inset-0 w-full h-full object-cover -z-10"
             priority
+            unoptimized
           />
         </div>
       </div>
@@ -46,7 +47,7 @@ export default function Home() {
         </div>
         <div className="w-full md:w-auto flex justify-center md:justify-end">
           <Image 
-            src={"/ototo_inside1.jpeg"}
+            src={"/ototo_inside1.JPEG"}
             alt="Food"
             width={550}
             height={400}

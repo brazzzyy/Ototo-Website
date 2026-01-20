@@ -2,8 +2,6 @@
 
 import { Resend } from 'resend';
 
-// REMINDER: Once domain has been bought and verified
-// change this to 'process.env.CONTACT_EMAIL'
 const CONTACT_EMAIL = process.env.CONTACT_EMAIL;
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 
@@ -19,6 +17,10 @@ export async function submitContactForm(formData: FormData) {
 
   if (!CONTACT_EMAIL) {
     return { success: false, error: "Please fill in all required fields."}
+  }
+
+  if (!process.env.RESEND_FROM_EMAIL) {
+    return { success: false, error: "Error: There is currenly an issue. Please be patient while we try to solve this."}
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -38,7 +40,6 @@ export async function submitContactForm(formData: FormData) {
 
     const resend = new Resend(RESEND_API_KEY);
     
-    // REMINDER: once deployed, must verify domain with Resend to use this email
     const fromEmail = process.env.RESEND_FROM_EMAIL;
     if (!fromEmail) {
       console.log(`ERROR: No domain name email: ${fromEmail}`);
