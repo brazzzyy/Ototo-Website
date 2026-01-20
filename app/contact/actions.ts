@@ -17,6 +17,10 @@ export async function submitContactForm(formData: FormData) {
     return { success: false, error: 'Please fill in all required fields.' };
   }
 
+  if (!CONTACT_EMAIL) {
+    return { success: false, error: "Please fill in all required fields."}
+  }
+
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     return { success: false, error: 'Please enter a valid email address.' };
@@ -35,7 +39,12 @@ export async function submitContactForm(formData: FormData) {
     const resend = new Resend(RESEND_API_KEY);
     
     // REMINDER: once deployed, must verify domain with Resend to use this email
-    const fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
+    const fromEmail = process.env.RESEND_FROM_EMAIL;
+    if (!fromEmail) {
+      console.log(`ERROR: No domain name email: ${fromEmail}`);
+      return { success: false, error: "Error: no domain email configured"
+      }
+    }
     
     await resend.emails.send({
       from: fromEmail,
