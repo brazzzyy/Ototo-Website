@@ -25,7 +25,7 @@ export default function ContactPage() {
         <>
             <div className="flex flex-col md:flex-row mt-20 md:mt-18 lg:mt-30 mb-10 md:mb-20 lg:mb-55 gap-8 md:gap-12 lg:gap-25 justify-center items-start px-4 sm:px-6 md:px-8 max-w-7xl mx-auto">
                 <Image 
-                    src={"/food2.png"}                
+                    src={"/social14.png"}                
                     alt="Food"
                     height={500}
                     width={502}

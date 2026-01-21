@@ -2,10 +2,10 @@
 
 import { Resend } from 'resend';
 
-const CONTACT_EMAIL = process.env.CONTACT_EMAIL;
-const RESEND_API_KEY = process.env.RESEND_API_KEY;
-
 export async function submitContactForm(formData: FormData) {
+  const CONTACT_EMAIL = process.env.CONTACT_EMAIL;
+  const RESEND_API_KEY = process.env.RESEND_API_KEY;
+  
   const name = formData.get('name') as string;
   const email = formData.get('email') as string;
   const phone = formData.get('phone') as string;
@@ -16,11 +16,11 @@ export async function submitContactForm(formData: FormData) {
   }
 
   if (!CONTACT_EMAIL) {
-    return { success: false, error: "Please fill in all required fields."}
+    return { success: false, error: "Email service is not configured. Please contact us directly at ototoWI@outlook.com"}
   }
 
   if (!process.env.RESEND_FROM_EMAIL) {
-    return { success: false, error: "Error: There is currenly an issue. Please be patient while we try to solve this."}
+    return { success: false, error: "Error: There is currenly an issue."}
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
