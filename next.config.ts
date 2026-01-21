@@ -15,7 +15,8 @@ const nextConfig: NextConfig = {
   },
   env: {
     RESEND_API_KEY:process.env.RESEND_API_KEY,
-    CONTACT_EMAIL:process.env.CONTACT_EMAIL
+    CONTACT_EMAIL:process.env.CONTACT_EMAIL,
+    RESEND_FROM_EMAIL:process.env.RESEND_FROM_EMAIL
   }
 };
 
