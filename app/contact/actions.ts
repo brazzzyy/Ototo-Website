@@ -34,7 +34,7 @@ export async function submitContactForm(formData: FormData) {
       console.log('📧 Contact form submission (email not sent - no API key):', { name, email, phone, message });
       return { 
         success: false, 
-        error: 'Email service is not configured. Please contact us directly at ototoWI@outlook.com' 
+        error: 'Email service is not configured (API KEY). Please contact us directly at ototoWI@outlook.com' 
       };
     }
 

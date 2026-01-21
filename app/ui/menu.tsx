@@ -59,7 +59,7 @@ export default function Menu() {
                     alt="Menu Legend"
                     width={500}
                     height={500}
-                    className="-mt-4 md:-mt-7 mb-4 md:mb-5 pointer-events-none select-none w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] h-auto"
+                    className="-mt-4 md:-mt-7 mb-4 md:mb-5 pointer-events-none select-none w-full max-w-75 sm:max-w-100 md:max-w-125 h-auto"
                     loading="lazy"
                 />
                 <Image 
@@ -67,7 +67,7 @@ export default function Menu() {
                     alt="Menu alergies warning"
                     width={800}
                     height={800}
-                    className="pointer-events-none select-none w-full max-w-[400px] sm:max-w-[600px] md:max-w-[800px] h-auto"
+                    className="pointer-events-none select-none w-full max-w-100 sm:max-w-150 md:max-w-200 h-auto"
                     loading="lazy"
                 />
             </div>
