@@ -5,7 +5,7 @@ export default function Menu() {
         <>
             <div className="mt-14 md:mt-17 grid grid-cols-1 md:grid-cols-2">
                 <Image 
-                    src={"/pg 1.jpg"}
+                    src={"/menu_app.jpg"}
                     alt="menu picture"
                     height={900}
                     width={1200}
@@ -13,7 +13,7 @@ export default function Menu() {
                     priority
                 />
                 <Image 
-                    src={"/pge 2.jpg"}
+                    src={"/menu_ramen.jpg"}
                     alt="menu picture"
                     height={900}
                     width={1200}
@@ -21,7 +21,7 @@ export default function Menu() {
                     priority
                 />
                 <Image 
-                    src={"/pge 3.jpg"}
+                    src={"/menu_rice_bowls.jpg"}
                     alt="menu picture"
                     height={900}
                     width={1200}
@@ -29,7 +29,7 @@ export default function Menu() {
                     loading="lazy"
                 />
                 <Image 
-                    src={"/pges 4.jpg"}
+                    src={"/menu_specials.jpg"}
                     alt="menu picture"
                     height={900}
                     width={1200}
@@ -37,7 +37,7 @@ export default function Menu() {
                     loading="lazy"
                 />
                 <Image 
-                    src={"/pg 5.jpg"}
+                    src={"/menu_kids.jpg"}
                     alt="menu picture"
                     height={900}
                     width={1200}
@@ -45,7 +45,7 @@ export default function Menu() {
                     loading="lazy"
                 />
                 <Image 
-                    src={"/pge 6.jpg"}
+                    src={"/menu_drinks.jpg"}
                     alt="menu picture"
                     height={900}
                     width={1200}

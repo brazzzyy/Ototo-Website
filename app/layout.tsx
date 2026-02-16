@@ -4,7 +4,6 @@ import NavBar from "./ui/navbar";
 import Footer from "./ui/footer";
 
 // --- 1. CONFIGURATION ---
-// Keep all your hardcoded strings in one place
 const CONFIG = {
   name: "Ototo",
   cuisine: "Japanese Ramen & Comfort Food", 
@@ -23,7 +22,7 @@ const CONFIG = {
 
 // --- 2. METADATA (Server-Side Optimized) ---
 export const metadata: Metadata = {
-  metadataBase: new URL(CONFIG.domain), // Fixes all relative path issues automatically
+  metadataBase: new URL(CONFIG.domain),
   title: {
     default: `${CONFIG.name} | ${CONFIG.address.city}, ${CONFIG.address.state}`,
     template: `%s | ${CONFIG.name}`,
@@ -41,7 +40,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/Ototo_Logo.png", // Or better: a photo of your Ramen ("/ramen-share.jpg")
+        url: "/Ototo_Logo.png",
         width: 1200,
         height: 630,
         alt: "Ototo Ramen in Appleton",
@@ -67,7 +66,7 @@ const jsonLd = {
   },
   telephone: CONFIG.phone,
   servesCuisine: CONFIG.cuisine,
-  priceRange: "$$", // $, $$, $$$, or $$$$
+  priceRange: "$$",
 };
 
 // --- 4. ROOT LAYOUT ---
@@ -79,7 +78,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* Render Schema as raw HTML for instant parsing by Google */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

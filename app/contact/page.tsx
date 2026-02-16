@@ -84,7 +84,7 @@ export default function ContactPage() {
                                 id="phone"
                                 name="phone"
                                 className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent font-lexend text-sm md:text-base"
-                                placeholder="(920) 555-1234"
+                                placeholder="(XXX) XXX-XXXX"
                             />
                         </div>
 
