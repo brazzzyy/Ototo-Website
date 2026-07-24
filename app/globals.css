@@ -3,8 +3,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FBF9F5;
+  --foreground: #14324F;
 }
 
 @theme inline {
@@ -14,14 +14,129 @@
   --font-lexend: "Lexend", sans-serif;
 }
 
+@theme {
+  /* Ototo brand palette — derived from the home hero */
+  --color-navy: #14324F;        /* primary ink */
+  --color-navy-light: #1D4568;  /* hover states */
+  --color-sky: #AEDCEB;         /* brand light blue */
+  --color-sky-soft: #DDF0F7;    /* tinted section backgrounds */
+  --color-accent: #E8542F;      /* vermillion accent — use sparingly */
+  --color-paper: #FBF9F5;       /* warm off-white page background */
+  --color-cream: #F7F1E3;       /* kanji / light text on dark */
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: white;
-    --foreground: black;
+    --background: #FBF9F5;
+    --foreground: #14324F;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+::selection {
+  background: var(--color-sky);
+  color: var(--color-navy);
+}
+
+/* Scrolling ribbon */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee 60s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* Hero entrance — plays on every visit/refresh */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bowl-in {
+  from { opacity: 0; transform: translateY(26px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* "backwards" keeps elements hidden during their delay, then releases
+   them to natural styles when done — so hover transforms still work */
+.anim-rise { animation: rise-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) backwards; }
+.anim-bowl { animation: bowl-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards; }
+.anim-fade { animation: fade-in 0.7s ease-out backwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-rise,
+  .anim-bowl,
+  .anim-fade {
+    animation: none;
+  }
+}
+
+/* Contact form — matches neutral UI field spec (1px border, 8px radius, 44px height) */
+.contact-label {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-family: var(--font-lexend);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: #344054;
+}
+
+.contact-input {
+  display: block;
+  width: 100%;
+  height: 2.75rem;
+  padding: 0.625rem 0.875rem;
+  font-family: var(--font-lexend);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--color-navy);
+  background-color: #ffffff;
+  border: 1px solid #d0d5dd;
+  border-radius: 0.5rem;
+  box-shadow: none;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.contact-input::placeholder {
+  color: #98a2b3;
+  font-size: 0.855rem;
+  line-height: 1.25rem;
+}
+
+.contact-input:hover:not(:disabled):not(:focus) {
+  border-color: #b9c0d4;
+}
+
+.contact-input:focus,
+.contact-input:focus-visible {
+  outline: none;
+  border-color: #98a2b3;
+  box-shadow: none;
+}
+
+.contact-input--textarea {
+  height: auto;
+  min-height: 8.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  resize: vertical;
 }

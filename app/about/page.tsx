@@ -1,45 +1,95 @@
 import Image from "next/image";
+import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "About | Ototo",
+    description:
+        "Meet Yia Thao, owner of Ototo — a Japanese ramen and donburi restaurant in Appleton, WI built on fresh food, craft, and community.",
+};
 
 export default function About() {
     return (
-        <section className="container mx-auto px-4 py-12 lg:py-24">
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20 mt-10 mb-15">
-                <div className="w-full max-w-125 shrink-0">
-                    <Image 
-                        src={"/store.jpg"}
-                        alt="Yia Thao, owner of Ototo"
-                        width={500}
-                        height={400}
-                        className="w-full h-auto object-cover rounded-lg shadow-sm"
-                        priority
-                    />
-                </div>
-
-                <div className="flex flex-col gap-5 w-full max-w-2xl lg:w-1/2 font-league text-lg md:text-xl font-light">
-                    <h1 className="font-medium text-4xl md:text-5xl text-center lg:text-left mb-2">
-                        About Owner
+        <>
+            {/* Page header */}
+            <section className="bg-sky pt-16">
+                <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 pt-12 md:pt-16 pb-12 md:pb-16 flex flex-col items-center text-center">
+                    <span className="font-lexend text-xs md:text-sm tracking-[0.25em] uppercase text-navy/70 mb-3">
+                        私たちについて — Our Story
+                    </span>
+                    <h1 className="font-league font-bold uppercase text-navy text-4xl md:text-5xl lg:text-6xl">
+                        Behind Ototo
                     </h1>
-                    
-                    <p>
-                        Yia Thao is the proud owner of Ototo and stepped into ownership in September 2025 under 
-                        new management. Her decision to take on the restaurant was driven by a genuine love for cooking and a belief 
-                        that food has the power to bring people together in meaningful ways. For Yia, meals are more than something to be served. 
-                        They are moments that create connection and leave a lasting impression.
-                    </p>
-                    <p>
-                        Cooking has always been close to Yia’s heart. It is how she expresses care and creates a sense of 
-                        belonging for others. Growing up surrounded by shared meals and time spent in the kitchen shaped her appreciation 
-                        for food as a central part of culture and community. That foundation continues to influence how Ototo is run today, 
-                        from the atmosphere of the space to the way each dish is prepared and presented.
-                    </p>
-                    <p>
-                        Since taking over Ototo, Yia has focused on creating a welcoming environment where guests feel 
-                        comfortable returning again and again. She is passionate about offering food that feels familiar yet thoughtful, 
-                        and about building a place where people can gather, slow down, and enjoy time together. As Ototo continues to grow, 
-                        Yia remains excited about what lies ahead and is grateful for the support of the community that makes it all possible.
+                    <p className="mt-4 font-lexend font-light text-navy/80 text-sm md:text-base max-w-xl">
+                        Food made with care, served in a space that feels like family.
                     </p>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            {/* Owner story */}
+            <section className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 pt-14 md:pt-20 pb-20 md:pb-28">
+                <div className="flex flex-col lg:flex-row items-start justify-center gap-12 lg:gap-20">
+                    <div className="relative w-full max-w-125 shrink-0 mx-auto lg:mx-0">
+                        <Image
+                            src={"/images/store.webp"}
+                            alt="The Ototo storefront on Richmond Street in Appleton"
+                            width={500}
+                            height={400}
+                            sizes="(min-width: 1024px) 500px, 100vw"
+                            className="relative w-full h-auto object-cover rounded-2xl"
+                            priority
+                        />
+                        {/* caption chip */}
+                        <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap bg-navy text-white font-lexend text-xs md:text-sm px-5 py-2.5 rounded-full shadow-lg shadow-navy/25">
+                            205 N Richmond St · Appleton, WI
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col gap-5 w-full max-w-2xl lg:w-1/2 pt-10 lg:pt-0">
+                        <span className="font-lexend text-xs md:text-sm tracking-[0.25em] uppercase text-accent">
+                            オーナー — The Owner
+                        </span>
+                        <h2 className="font-league font-bold text-navy text-4xl md:text-5xl mb-2">
+                            Meet Yia Thao
+                        </h2>
+
+                        <p className="font-lexend font-light text-navy/80 text-sm md:text-base leading-relaxed">
+                            Yia Thao is the proud owner of Ototo and stepped into ownership in September 2025 under
+                            new management. Her decision to take on the restaurant was driven by a genuine love for cooking and a belief
+                            that food has the power to bring people together in meaningful ways. For Yia, meals are more than something to be served.
+                            They are moments that create connection and leave a lasting impression.
+                        </p>
+                        <p className="font-lexend font-light text-navy/80 text-sm md:text-base leading-relaxed">
+                            Cooking has always been close to Yia&rsquo;s heart. It is how she expresses care and creates a sense of
+                            belonging for others. Growing up surrounded by shared meals and time spent in the kitchen shaped her appreciation
+                            for food as a central part of culture and community. That foundation continues to influence how Ototo is run today,
+                            from the atmosphere of the space to the way each dish is prepared and presented.
+                        </p>
+                        <p className="font-lexend font-light text-navy/80 text-sm md:text-base leading-relaxed">
+                            Since taking over Ototo, Yia has focused on creating a welcoming environment where guests feel
+                            comfortable returning again and again. She is passionate about offering food that feels familiar yet thoughtful,
+                            and about building a place where people can gather, slow down, and enjoy time together. As Ototo continues to grow,
+                            Yia remains excited about what lies ahead and is grateful for the support of the community that makes it all possible.
+                        </p>
+
+                        <div className="mt-4 flex flex-wrap items-center gap-4">
+                            <Link
+                                href={"/menu"}
+                                className="group inline-flex items-center gap-2 bg-navy hover:bg-navy-light text-white font-lexend font-medium px-7 py-3 rounded-full text-sm md:text-base transition-all duration-200 hover:-translate-y-0.5"
+                            >
+                                See The Menu
+                                <span className="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
+                            </Link>
+                            <Link
+                                href={"/contact"}
+                                className="font-lexend text-sm md:text-base text-navy/70 hover:text-navy underline underline-offset-4 decoration-navy/30 hover:decoration-navy transition-colors"
+                            >
+                                Get in touch
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </>
     );
 }

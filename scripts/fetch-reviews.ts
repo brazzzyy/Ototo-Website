@@ -4,11 +4,11 @@
  * Usage:
  * 1. Make sure you have .env with GOOGLE_PLACES_API_KEY and GOOGLE_PLACE_ID
  * 2. Run: pnpm tsx scripts/fetch-reviews.ts
- * 3. Review the generated data in app/reviews/reviews-data.ts
+ * 3. Review the generated data in lib/reviews-data.ts
  * 4. Manually edit the file to curate which reviews to display
  */
 
-import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { writeFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import { config } from 'dotenv';
 
@@ -50,6 +50,7 @@ interface GooglePlaceDetails {
     user_ratings_total?: number;
   };
   status: string;
+  error_message?: string;
 }
 
 interface Review {
@@ -98,8 +99,8 @@ async function fetchReviews(): Promise<ReviewsData | null> {
       console.error(`API Error: ${data.status}`);
       
       // Show detailed error information
-      if ((data as any).error_message) {
-        console.error(`   Error Message: ${(data as any).error_message}`);
+      if (data.error_message) {
+        console.error(`   Error Message: ${data.error_message}`);
       }
       
       return null;
@@ -162,7 +163,7 @@ function generateReviewsFile(reviewsData: ReviewsData): string {
  * Last updated: ${new Date().toISOString()}
  */
 
-import { Review, ReviewsData } from './actions';
+import { ReviewsData } from './reviews-types';
 
 export const reviewsData: ReviewsData = {
   reviews: [
@@ -181,7 +182,7 @@ async function main() {
     process.exit(1);
   }
 
-  const filePath = join(process.cwd(), 'app/reviews/reviews-data.ts');
+  const filePath = join(process.cwd(), 'lib/reviews-data.ts');
   const fileContent = generateReviewsFile(reviewsData);
   
   writeFileSync(filePath, fileContent, 'utf-8');

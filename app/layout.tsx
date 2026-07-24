@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import NavBar from "./ui/navbar";
-import Footer from "./ui/footer";
+import NavBar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 // --- 1. CONFIGURATION ---
 const CONFIG = {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   description: CONFIG.description,
   icons: {
-    icon: "/Ototo_Logo.png", //
+    icon: "/brand/Ototo_Logo.png", //
   },
   openGraph: {
     title: CONFIG.name,
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/Ototo_Logo.png",
+        url: "/brand/Ototo_Logo.png",
         width: 1200,
         height: 630,
         alt: "Ototo Ramen in Appleton",
@@ -54,7 +54,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   name: CONFIG.name,
-  image: `${CONFIG.domain}/Ototo_Logo.png`,
+  image: `${CONFIG.domain}/brand/Ototo_Logo.png`,
   description: CONFIG.description,
   address: {
     "@type": "PostalAddress",
