@@ -50,6 +50,8 @@ export default function NavBar() {
         href === "/" ? pathname === "/" : pathname.startsWith(href);
 
     const isSolid = isScrolled || isMenuOpen;
+    // Every page tops out dark (hero photo or ink band), so the transparent bar uses light styling
+    const onDark = !isSolid;
 
     return (
         <header className="fixed inset-x-0 top-0 z-50">
@@ -65,8 +67,8 @@ export default function NavBar() {
                     {/* Logo */}
                     <Link href="/" className="shrink-0" onClick={() => setIsMenuOpen(false)}>
                         <Image
-                            className="h-9 sm:h-10 lg:h-11 w-auto cursor-pointer select-none"
-                            src="/brand/Ototo_nav.png"
+                            className={`h-9 sm:h-10 lg:h-11 w-auto cursor-pointer select-none ${onDark ? "" : "brightness-0"}`}
+                            src={onDark ? "/brand/Ototo_footer.png" : "/brand/Ototo_nav.png"}
                             alt="Ototo"
                             width={160}
                             height={72}
@@ -82,8 +84,12 @@ export default function NavBar() {
                                     href={href}
                                     className={`font-lexend text-sm tracking-wide rounded-full px-4 py-2 transition-colors ${
                                         isActive(href)
-                                            ? `${isSolid ? "bg-sky-soft" : "bg-white/45"} text-navy font-medium`
-                                            : `hover:text-navy ${isSolid ? "text-navy/70 hover:bg-navy/5" : "text-navy/90 hover:bg-white/30"}`
+                                            ? onDark
+                                                ? "bg-white/25 text-white font-medium backdrop-blur-sm"
+                                                : `${isSolid ? "bg-muted" : "bg-muted/70"} text-navy font-medium`
+                                            : onDark
+                                                ? "text-white/85 hover:text-white hover:bg-white/15"
+                                                : `hover:text-navy ${isSolid ? "text-navy/70 hover:bg-navy/5" : "text-navy/90 hover:bg-white/30"}`
                                     }`}
                                 >
                                     {label}
@@ -98,7 +104,11 @@ export default function NavBar() {
                             href={FACEBOOK_URL}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex h-10 w-10 items-center justify-center rounded-full text-navy/60 hover:text-navy hover:bg-navy/5 transition-colors"
+                            className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors ${
+                                onDark
+                                    ? "text-white/80 hover:text-white hover:bg-white/15"
+                                    : "text-navy/60 hover:text-navy hover:bg-navy/5"
+                            }`}
                             aria-label="Ototo on Facebook"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-5 w-5" aria-hidden="true">
@@ -109,7 +119,11 @@ export default function NavBar() {
                             href={ORDER_URL}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group inline-flex items-center gap-1.5 bg-navy hover:bg-navy-light text-white font-lexend text-sm font-medium px-5 py-2.5 rounded-full shadow-md shadow-navy/15 transition-all hover:-translate-y-0.5"
+                            className={`group inline-flex items-center gap-1.5 font-lexend text-sm font-medium px-5 py-2.5 rounded-full transition-all hover:-translate-y-0.5 ${
+                                onDark
+                                    ? "bg-white hover:bg-cream text-navy shadow-md shadow-black/20"
+                                    : "bg-navy hover:bg-navy-light text-white shadow-md shadow-navy/15"
+                            }`}
                         >
                             Order Online
                             <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
@@ -122,32 +136,44 @@ export default function NavBar() {
                             href={ORDER_URL}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center bg-navy text-white font-lexend text-xs sm:text-sm font-medium px-3.5 sm:px-4 py-2 rounded-full"
+                            className={`inline-flex items-center font-lexend text-xs sm:text-sm font-medium px-3.5 sm:px-4 py-2 rounded-full ${
+                                onDark ? "bg-white text-navy" : "bg-navy text-white"
+                            }`}
                         >
                             Order
                         </Link>
                         <button
                             type="button"
                             onClick={() => setIsMenuOpen((open) => !open)}
-                            className="flex h-10 w-10 items-center justify-center rounded-full border border-navy/15 text-navy hover:bg-navy/5 transition-colors"
+                            className={`flex h-10 w-10 items-center justify-center rounded-full border transition-colors ${
+                                onDark
+                                    ? "border-white/40 text-white hover:bg-white/15"
+                                    : "border-navy/15 text-navy hover:bg-navy/5"
+                            }`}
                             aria-expanded={isMenuOpen}
                             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                         >
                             <span className="relative block h-4 w-5" aria-hidden="true">
                                 <span
-                                    className={`absolute left-0 top-1/2 h-0.5 w-5 origin-center rounded-full bg-navy transition-all duration-300 ease-out ${
+                                    className={`absolute left-0 top-1/2 h-0.5 w-5 origin-center rounded-full transition-all duration-300 ease-out ${
+                                        onDark ? "bg-white" : "bg-navy"
+                                    } ${
                                         isMenuOpen
                                             ? "-translate-y-1/2 rotate-45"
                                             : "-translate-y-[7px]"
                                     }`}
                                 />
                                 <span
-                                    className={`absolute left-0 top-1/2 h-0.5 w-5 -translate-y-1/2 rounded-full bg-navy transition-all duration-300 ease-out ${
+                                    className={`absolute left-0 top-1/2 h-0.5 w-5 -translate-y-1/2 rounded-full transition-all duration-300 ease-out ${
+                                        onDark ? "bg-white" : "bg-navy"
+                                    } ${
                                         isMenuOpen ? "scale-x-0 opacity-0" : "opacity-100"
                                     }`}
                                 />
                                 <span
-                                    className={`absolute left-0 top-1/2 h-0.5 w-5 origin-center rounded-full bg-navy transition-all duration-300 ease-out ${
+                                    className={`absolute left-0 top-1/2 h-0.5 w-5 origin-center rounded-full transition-all duration-300 ease-out ${
+                                        onDark ? "bg-white" : "bg-navy"
+                                    } ${
                                         isMenuOpen
                                             ? "-translate-y-1/2 -rotate-45"
                                             : "translate-y-[5px]"
@@ -181,8 +207,8 @@ export default function NavBar() {
                                     onClick={() => setIsMenuOpen(false)}
                                     className={`block w-full font-league text-xl py-3 px-2 rounded-lg transition-colors ${
                                         isActive(href)
-                                            ? "text-navy font-semibold"
-                                            : "text-navy/80 hover:bg-sky-soft/80"
+                                            ? "text-navy font-semibold bg-muted"
+                                            : "text-navy/80 hover:bg-muted/80"
                                     }`}
                                 >
                                     {label}

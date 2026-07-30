@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Footer() {
     return (
         <>
-            <div className="p-6 md:p-10 lg:p-15 bg-navy flex flex-col md:flex-row items-start gap-6 md:gap-8 lg:gap-12 justify-between">
+            <div className="p-6 md:p-10 lg:p-15 bg-ink flex flex-col md:flex-row items-start gap-6 md:gap-8 lg:gap-12 justify-between">
                 {/* Logo + Description */}
                 <div className="flex flex-col w-full md:w-auto">
                     <Image
@@ -45,7 +45,7 @@ export default function Footer() {
                 </div>
             </div>
             {/* Website Privacy Terms */}
-            <div className="font-lexend font-light flex flex-col sm:flex-row justify-between items-center sm:items-start gap-2 sm:gap-0 px-4 sm:px-8 md:px-12 lg:px-17 pb-4 bg-navy text-cream/60 text-xs sm:text-sm border-t border-cream/10 pt-4">
+            <div className="font-lexend font-light flex flex-col sm:flex-row justify-between items-center sm:items-start gap-2 sm:gap-0 px-4 sm:px-8 md:px-12 lg:px-17 pb-4 bg-ink text-cream/60 text-xs sm:text-sm border-t border-cream/10 pt-4">
                 <p>&#169; 2025 Ototo. All Rights Reserved</p>
                 <span className="text-center sm:text-right">Privacy Policy | Terms of Service</span>
             </div>

@@ -14,8 +14,8 @@ const ORDER_URL = "https://www.toasttab.com/local/order/ototo-appleton/r-df31c22
 
 const tagStyles: Record<MenuTag, { label: string; classes: string }> = {
     GF: { label: "GF", classes: "bg-sky-soft text-navy" },
-    Vegan: { label: "Vegan", classes: "bg-[#E5EFE2] text-[#3D6B47]" },
-    Spicy: { label: "Spicy", classes: "bg-[#FBE5DD] text-accent" },
+    Vegan: { label: "Vegan", classes: "bg-navy/5 text-navy border border-navy/15" },
+    Spicy: { label: "Spicy", classes: "bg-navy text-white" },
 };
 
 function Tags({ tags }: { tags?: MenuTag[] }) {
@@ -104,16 +104,22 @@ export default function Menu() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(menuJsonLd()) }}
             />
 
-            {/* Page header */}
-            <section className="bg-sky pt-16">
-                <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 pt-12 md:pt-16 pb-14 md:pb-18 flex flex-col items-center text-center">
-                    <span className="font-lexend text-xs md:text-sm tracking-[0.25em] uppercase text-navy/70 mb-3">
+            {/* Page header — ink band with ghost kanji */}
+            <section className="relative overflow-hidden bg-ink pt-16">
+                <span
+                    className="pointer-events-none select-none absolute -right-4 -bottom-14 font-league font-bold leading-none text-white/[0.05] text-[11rem] md:text-[15rem]"
+                    aria-hidden="true"
+                >
+                    献立
+                </span>
+                <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 pt-12 md:pt-16 pb-14 md:pb-18 flex flex-col items-center text-center">
+                    <span className="font-lexend text-xs md:text-sm tracking-[0.25em] uppercase text-white/50 mb-3">
                         献立 — Kondate
                     </span>
-                    <h1 className="font-league font-bold uppercase text-navy text-4xl md:text-5xl lg:text-6xl">
+                    <h1 className="font-league font-bold uppercase text-white text-4xl md:text-5xl lg:text-6xl">
                         The Menu
                     </h1>
-                    <p className="mt-4 font-lexend font-light text-navy/80 text-sm md:text-base max-w-xl">
+                    <p className="mt-4 font-lexend font-light text-white/65 text-sm md:text-base max-w-xl">
                         Ramen, rice bowls, and Japanese comfort food — made fresh daily.
                     </p>
                 </div>
@@ -145,7 +151,7 @@ export default function Menu() {
             </div>
 
             {/* Drinks / Beer / Sake — bar list on navy */}
-            <section id="drinks" className="scroll-mt-32 md:scroll-mt-36 mt-16 md:mt-24 bg-navy">
+            <section id="drinks" className="scroll-mt-32 md:scroll-mt-36 mt-16 md:mt-24 bg-ink">
                 <div className="mx-auto max-w-5xl px-6 sm:px-8 py-14 md:py-20">
                     <div className="flex items-baseline justify-between mb-2">
                         <h2 className="font-league font-bold text-white text-3xl md:text-4xl">

@@ -19,7 +19,7 @@ export default function MenuNav({ sections }: { sections: NavSection[] }) {
         >
             {/* Full-width scroll on mobile; centered pill on md+ */}
             <div className="overflow-x-auto overscroll-x-contain px-4 py-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:flex md:justify-center lg:overflow-x-visible">
-                <div className="inline-flex w-max max-w-none flex-nowrap items-center gap-0.5 md:gap-1 rounded-full bg-white/95 backdrop-blur-sm border border-navy/10 px-2 py-1.5 shadow-[0_6px_18px_-10px_rgba(20,50,79,0.22)]">
+                <div className="inline-flex w-max max-w-none flex-nowrap items-center gap-0.5 md:gap-1 rounded-full bg-white/95 backdrop-blur-sm border border-navy/10 px-2 py-1.5 shadow-[0_6px_18px_-10px_rgba(0,0,0,0.22)]">
                     {sections.map((section) => (
                         <a
                             key={section.id}

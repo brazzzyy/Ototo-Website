@@ -4,7 +4,7 @@
 
 :root {
   --background: #FBF9F5;
-  --foreground: #14324F;
+  --foreground: #1f1f1f;
 }
 
 @theme inline {
@@ -15,20 +15,22 @@
 }
 
 @theme {
-  /* Ototo brand palette — derived from the home hero */
-  --color-navy: #14324F;        /* primary ink */
-  --color-navy-light: #1D4568;  /* hover states */
-  --color-sky: #AEDCEB;         /* brand light blue */
-  --color-sky-soft: #DDF0F7;    /* tinted section backgrounds */
-  --color-accent: #E8542F;      /* vermillion accent — use sparingly */
+  /* Ototo brand palette — ink & paper monochrome */
+  --color-navy: #1f1f1f;        /* charcoal ink — not pure black */
+  --color-navy-light: #333333;  /* hover states */
+  --color-ink: #121212;         /* deep ink — footer, dark bands */
+  --color-sky: #DDDAD3;         /* warm stone grey (was light blue) */
+  --color-sky-soft: #EFEDE7;    /* light warm grey fills */
+  --color-accent: #1f1f1f;      /* solid accents collapse to ink */
   --color-paper: #FBF9F5;       /* warm off-white page background */
-  --color-cream: #F7F1E3;       /* kanji / light text on dark */
+  --color-cream: #F0EEE9;       /* light neutral text on dark */
+  --color-muted: #d4d4d4;       /* nav active, subtle fills */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #FBF9F5;
-    --foreground: #14324F;
+    --foreground: #1f1f1f;
   }
 }
 

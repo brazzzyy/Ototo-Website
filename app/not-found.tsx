@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function NotFound() {
     return (
-        <div className="flex min-h-screen w-full flex-col items-center justify-center px-4 text-center bg-sky">
+        <div className="flex min-h-screen w-full flex-col items-center justify-center px-4 text-center bg-paper">
             <div className="flex flex-col items-center max-w-lg">
                 <span className="font-lexend text-xs md:text-sm tracking-[0.25em] uppercase text-navy/60 mb-2" aria-hidden="true">
                     おっと — Oops

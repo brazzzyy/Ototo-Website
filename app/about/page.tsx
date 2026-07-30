@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
+const MAP_URL =
+    "https://www.google.com/maps/place/Ot%C5%8Dto/@44.263218,-88.4186325,16z/data=!3m1!4b1!4m6!3m5!1s0x8803b70901001cd5:0xcbafbc715982a865!8m2!3d44.2632142!4d-88.4160576!16s%2Fg%2F11vt8dkhwn";
+
 export const metadata: Metadata = {
     title: "About | Ototo",
     description:
@@ -11,16 +14,22 @@ export const metadata: Metadata = {
 export default function About() {
     return (
         <>
-            {/* Page header */}
-            <section className="bg-sky pt-16">
-                <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 pt-12 md:pt-16 pb-12 md:pb-16 flex flex-col items-center text-center">
-                    <span className="font-lexend text-xs md:text-sm tracking-[0.25em] uppercase text-navy/70 mb-3">
+            {/* Page header — ink band with ghost kanji */}
+            <section className="relative overflow-hidden bg-ink pt-16">
+                <span
+                    className="pointer-events-none select-none absolute -right-4 -bottom-14 font-league font-bold leading-none text-white/[0.05] text-[11rem] md:text-[15rem]"
+                    aria-hidden="true"
+                >
+                    物語
+                </span>
+                <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 pt-12 md:pt-16 pb-12 md:pb-16 flex flex-col items-center text-center">
+                    <span className="font-lexend text-xs md:text-sm tracking-[0.25em] uppercase text-white/50 mb-3">
                         私たちについて — Our Story
                     </span>
-                    <h1 className="font-league font-bold uppercase text-navy text-4xl md:text-5xl lg:text-6xl">
+                    <h1 className="font-league font-bold uppercase text-white text-4xl md:text-5xl lg:text-6xl">
                         Behind Ototo
                     </h1>
-                    <p className="mt-4 font-lexend font-light text-navy/80 text-sm md:text-base max-w-xl">
+                    <p className="mt-4 font-lexend font-light text-white/65 text-sm md:text-base max-w-xl">
                         Food made with care, served in a space that feels like family.
                     </p>
                 </div>
@@ -40,13 +49,18 @@ export default function About() {
                             priority
                         />
                         {/* caption chip */}
-                        <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap bg-navy text-white font-lexend text-xs md:text-sm px-5 py-2.5 rounded-full shadow-lg shadow-navy/25">
+                        <Link
+                            href={MAP_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap bg-navy text-white font-lexend text-xs md:text-sm px-5 py-2.5 rounded-full shadow-lg shadow-navy/25 hover:bg-navy-light transition-colors"
+                        >
                             205 N Richmond St · Appleton, WI
-                        </div>
+                        </Link>
                     </div>
 
                     <div className="flex flex-col gap-5 w-full max-w-2xl lg:w-1/2 pt-10 lg:pt-0">
-                        <span className="font-lexend text-xs md:text-sm tracking-[0.25em] uppercase text-accent">
+                        <span className="font-lexend text-xs md:text-sm tracking-[0.25em] uppercase text-navy/50">
                             オーナー — The Owner
                         </span>
                         <h2 className="font-league font-bold text-navy text-4xl md:text-5xl mb-2">

@@ -55,15 +55,21 @@ export default function ContactPageClient() {
 
     return (
         <>
-            <section className="bg-sky pt-16">
-                <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 pt-12 md:pt-16 pb-12 md:pb-16 flex flex-col items-center text-center">
-                    <span className="font-lexend text-xs md:text-sm tracking-[0.25em] uppercase text-navy/70 mb-3">
+            <section className="relative overflow-hidden bg-ink pt-16">
+                <span
+                    className="pointer-events-none select-none absolute -right-4 -bottom-14 font-league font-bold leading-none text-white/[0.05] text-[11rem] md:text-[15rem]"
+                    aria-hidden="true"
+                >
+                    連絡
+                </span>
+                <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 pt-12 md:pt-16 pb-12 md:pb-16 flex flex-col items-center text-center">
+                    <span className="font-lexend text-xs md:text-sm tracking-[0.25em] uppercase text-white/50 mb-3">
                         お問い合わせ — Get In Touch
                     </span>
-                    <h1 className="font-league font-bold uppercase text-navy text-4xl md:text-5xl lg:text-6xl">
+                    <h1 className="font-league font-bold uppercase text-white text-4xl md:text-5xl lg:text-6xl">
                         Contact Ototo
                     </h1>
-                    <p className="mt-4 font-lexend font-light text-navy/80 text-sm md:text-base max-w-xl">
+                    <p className="mt-4 font-lexend font-light text-white/65 text-sm md:text-base max-w-xl">
                         Questions, catering, feedback — we&rsquo;d love to hear from you.
                     </p>
                 </div>

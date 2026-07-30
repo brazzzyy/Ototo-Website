@@ -56,7 +56,7 @@ export default function Reviews() {
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
-      <span key={i} className={i < rating ? 'text-amber-400' : 'text-white/25'} aria-hidden="true">
+      <span key={i} className={i < rating ? 'text-navy' : 'text-navy/15'} aria-hidden="true">
         ★
       </span>
     ));
@@ -80,7 +80,7 @@ export default function Reviews() {
       {/* Header: copy left, arrows right */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div className="max-w-2xl">
-          <span className="font-lexend text-xs md:text-sm tracking-[0.25em] uppercase text-accent">
+          <span className="font-lexend text-xs md:text-sm tracking-[0.25em] uppercase text-navy/50">
             お客様の声 — Reviews
           </span>
           <h2 className="mt-3 font-league font-bold text-navy text-3xl md:text-4xl lg:text-5xl">
@@ -112,7 +112,7 @@ export default function Reviews() {
           <button
             type="button"
             onClick={() => scrollReviews(1)}
-            className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-accent text-white hover:bg-navy transition-colors"
+            className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-navy text-white hover:bg-navy-light transition-colors"
             aria-label="Next review"
           >
             <span aria-hidden="true">→</span>
@@ -129,7 +129,7 @@ export default function Reviews() {
           <div
             key={`${review.authorName}-${review.time}`}
             data-review-card
-            className="snap-start shrink-0 w-full sm:w-90 lg:w-96 bg-navy rounded-2xl p-6 sm:p-7 flex flex-col"
+            className="snap-start shrink-0 w-full sm:w-90 lg:w-96 bg-white border border-navy/10 rounded-2xl p-6 sm:p-7 flex flex-col shadow-[0_10px_30px_-18px_rgba(18,18,18,0.25)]"
           >
             {/* Reviewer */}
             <div className="flex items-center gap-4">
@@ -151,31 +151,31 @@ export default function Reviews() {
                   </div>
                 )}
                 <span
-                  className="absolute -top-1.5 -left-1.5 flex h-7 w-7 items-center justify-center rounded-full bg-accent text-white font-league font-bold text-xl leading-none"
+                  className="absolute -top-1.5 -left-1.5 flex h-7 w-7 items-center justify-center rounded-full bg-navy text-white font-league font-bold text-xl leading-none"
                   aria-hidden="true"
                 >
                   &rdquo;
                 </span>
               </div>
               <div className="min-w-0">
-                <h3 className="font-league font-semibold text-white text-lg truncate">
+                <h3 className="font-league font-semibold text-navy text-lg truncate">
                   {review.authorName}
                 </h3>
-                <p className="font-lexend text-xs text-sky">{review.relativeTime}</p>
+                <p className="font-lexend text-xs text-navy/50">{review.relativeTime}</p>
               </div>
             </div>
 
             {/* Divider */}
-            <div className="my-4 border-t border-white/10" aria-hidden="true"></div>
+            <div className="my-4 border-t border-navy/10" aria-hidden="true"></div>
 
             {/* Rating */}
             <div className="flex items-center gap-2" role="img" aria-label={`${review.rating} out of 5 stars`}>
               <div className="flex text-sm tracking-wide">{renderStars(review.rating)}</div>
-              <span className="font-lexend text-xs text-white/50">({review.rating}.0)</span>
+              <span className="font-lexend text-xs text-navy/45">({review.rating}.0)</span>
             </div>
 
             {/* Quote */}
-            <p className="mt-3 font-lexend font-light italic text-sm text-white/85 leading-relaxed line-clamp-5">
+            <p className="mt-3 font-lexend font-light italic text-sm text-navy/75 leading-relaxed line-clamp-5">
               &ldquo;{review.text}&rdquo;
             </p>
           </div>
