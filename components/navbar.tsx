@@ -160,7 +160,7 @@ export default function NavBar() {
                                     } ${
                                         isMenuOpen
                                             ? "-translate-y-1/2 rotate-45"
-                                            : "-translate-y-[7px]"
+                                            : "-translate-y-1.75"
                                     }`}
                                 />
                                 <span
@@ -176,7 +176,7 @@ export default function NavBar() {
                                     } ${
                                         isMenuOpen
                                             ? "-translate-y-1/2 -rotate-45"
-                                            : "translate-y-[5px]"
+                                            : "translate-y-1.25"
                                     }`}
                                 />
                             </span>

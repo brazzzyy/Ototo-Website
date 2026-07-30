@@ -16,7 +16,7 @@ export default function Home() {
           priority
         />
         {/* Soft scrims: top blends the transparent navbar, center keeps text legible */}
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/45 to-transparent" aria-hidden="true"></div>
+        <div className="absolute inset-x-0 top-0 h-32 bg-linear-to-b from-black/45 to-transparent" aria-hidden="true"></div>
         <div className="absolute inset-0 bg-black/10" aria-hidden="true"></div>
 
         <h1 className="anim-rise relative font-league font-medium text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white text-center drop-shadow-[0_4px_16px_rgba(0,0,0,0.45)]">

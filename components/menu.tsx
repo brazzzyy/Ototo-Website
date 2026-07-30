@@ -107,7 +107,7 @@ export default function Menu() {
             {/* Page header — ink band with ghost kanji */}
             <section className="relative overflow-hidden bg-ink pt-16">
                 <span
-                    className="pointer-events-none select-none absolute -right-4 -bottom-14 font-league font-bold leading-none text-white/[0.05] text-[11rem] md:text-[15rem]"
+                    className="pointer-events-none select-none absolute -right-4 -bottom-14 font-league font-bold leading-none text-white/5 text-[11rem] md:text-[15rem]"
                     aria-hidden="true"
                 >
                     献立
