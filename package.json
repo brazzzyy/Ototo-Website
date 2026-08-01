@@ -2,9 +2,13 @@
   "name": "ototo",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.13.1",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint"
   },
