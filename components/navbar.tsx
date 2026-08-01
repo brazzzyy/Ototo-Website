@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import wordmark from "@/public/brand/Ototo_footer.png";
 
 const ORDER_URL =
     "https://www.toasttab.com/local/order/ototo-appleton/r-df31c22c-6ca0-45b0-b27c-6139a1f6739d?diningOption=takeout&rwg_token=ACgRB3cr_tZA84yh6Ue3AOoa4cot2rh-w67oxT743d87l-Di8dEeOAzta6Cn8zR6F7sxhIGWHEnz2538z0ZTm64KJY-5yOoH_Q%3D%3D";
@@ -66,12 +67,15 @@ export default function NavBar() {
                 <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-5 sm:px-6 lg:px-8">
                     {/* Logo */}
                     <Link href="/" className="shrink-0" onClick={() => setIsMenuOpen(false)}>
+                        {/* One asset for both states: the wordmark ships white
+                            and `brightness-0` renders it solid ink once the bar
+                            goes opaque. Swapping the src instead meant fetching
+                            a second PNG the first time you scrolled. */}
                         <Image
-                            className={`h-9 sm:h-10 lg:h-11 w-auto cursor-pointer select-none ${onDark ? "" : "brightness-0"}`}
-                            src={onDark ? "/brand/Ototo_footer.png" : "/brand/Ototo_nav.png"}
+                            className={`h-9 sm:h-10 lg:h-11 w-auto cursor-pointer select-none transition-[filter] duration-300 ${onDark ? "" : "brightness-0"}`}
+                            src={wordmark}
                             alt="Ototo"
-                            width={160}
-                            height={72}
+                            sizes="160px"
                             priority
                         />
                     </Link>

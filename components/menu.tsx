@@ -107,19 +107,20 @@ export default function Menu() {
             {/* Page header — ink band with ghost kanji */}
             <section className="relative overflow-hidden bg-ink pt-16">
                 <span
-                    className="pointer-events-none select-none absolute -right-4 -bottom-14 font-league font-bold leading-none text-white/5 text-[11rem] md:text-[15rem]"
+                    className="anim-fade pointer-events-none select-none absolute -right-4 -bottom-14 font-league font-bold leading-none text-white/5 text-[11rem] md:text-[15rem]"
+                    style={{ animationDelay: "0.25s" }}
                     aria-hidden="true"
                 >
                     献立
                 </span>
                 <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 pt-12 md:pt-16 pb-14 md:pb-18 flex flex-col items-center text-center">
-                    <span className="font-lexend text-xs md:text-sm tracking-[0.25em] uppercase text-white/50 mb-3">
+                    <span className="anim-rise font-lexend text-xs md:text-sm tracking-[0.25em] uppercase text-white/50 mb-3">
                         献立 — Kondate
                     </span>
-                    <h1 className="font-league font-bold uppercase text-white text-4xl md:text-5xl lg:text-6xl">
+                    <h1 className="anim-rise font-league font-bold uppercase text-white text-4xl md:text-5xl lg:text-6xl" style={{ animationDelay: "0.08s" }}>
                         The Menu
                     </h1>
-                    <p className="mt-4 font-lexend font-light text-white/65 text-sm md:text-base max-w-xl">
+                    <p className="anim-rise mt-4 font-lexend font-light text-white/65 text-sm md:text-base max-w-xl" style={{ animationDelay: "0.16s" }}>
                         Ramen, rice bowls, and Japanese comfort food — made fresh daily.
                     </p>
                 </div>

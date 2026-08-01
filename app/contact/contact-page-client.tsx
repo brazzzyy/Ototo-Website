@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { submitContactForm } from "./actions";
+import Reveal from "@/components/reveal";
 
 const MAP_URL =
     "https://www.google.com/maps/place/Ot%C5%8Dto/@44.263218,-88.4186325,16z/data=!3m1!4b1!4m6!3m5!1s0x8803b70901001cd5:0xcbafbc715982a865!8m2!3d44.2632142!4d-88.4160576!16s%2Fg%2F11vt8dkhwn";
@@ -13,14 +14,16 @@ const textareaClass = "contact-input contact-input--textarea";
 function InfoRow({
     icon,
     title,
+    delay = 0,
     children,
 }: {
     icon: React.ReactNode;
     title: string;
+    delay?: number;
     children: React.ReactNode;
 }) {
     return (
-        <div className="flex items-start gap-4">
+        <Reveal variant="left" delay={delay} className="flex items-start gap-4">
             <div
                 className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-sky-soft text-navy"
                 aria-hidden="true"
@@ -31,7 +34,7 @@ function InfoRow({
                 <span className="font-league font-semibold text-navy text-lg block mb-0.5">{title}</span>
                 <div className="font-lexend font-light text-navy/70 text-sm leading-relaxed">{children}</div>
             </div>
-        </div>
+        </Reveal>
     );
 }
 
@@ -57,19 +60,20 @@ export default function ContactPageClient() {
         <>
             <section className="relative overflow-hidden bg-ink pt-16">
                 <span
-                    className="pointer-events-none select-none absolute -right-4 -bottom-14 font-league font-bold leading-none text-white/5 text-[11rem] md:text-[15rem]"
+                    className="anim-fade pointer-events-none select-none absolute -right-4 -bottom-14 font-league font-bold leading-none text-white/5 text-[11rem] md:text-[15rem]"
+                    style={{ animationDelay: "0.25s" }}
                     aria-hidden="true"
                 >
                     連絡
                 </span>
                 <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 pt-12 md:pt-16 pb-12 md:pb-16 flex flex-col items-center text-center">
-                    <span className="font-lexend text-xs md:text-sm tracking-[0.25em] uppercase text-white/50 mb-3">
+                    <span className="anim-rise font-lexend text-xs md:text-sm tracking-[0.25em] uppercase text-white/50 mb-3">
                         お問い合わせ — Get In Touch
                     </span>
-                    <h1 className="font-league font-bold uppercase text-white text-4xl md:text-5xl lg:text-6xl">
+                    <h1 className="anim-rise font-league font-bold uppercase text-white text-4xl md:text-5xl lg:text-6xl" style={{ animationDelay: "0.08s" }}>
                         Contact Ototo
                     </h1>
-                    <p className="mt-4 font-lexend font-light text-white/65 text-sm md:text-base max-w-xl">
+                    <p className="anim-rise mt-4 font-lexend font-light text-white/65 text-sm md:text-base max-w-xl" style={{ animationDelay: "0.16s" }}>
                         Questions, catering, feedback — we&rsquo;d love to hear from you.
                     </p>
                 </div>
@@ -81,6 +85,7 @@ export default function ContactPageClient() {
                         <div className="flex w-full max-w-sm flex-col gap-7">
                             <InfoRow
                                 title="Visit"
+                                delay={0}
                                 icon={
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -110,6 +115,7 @@ export default function ContactPageClient() {
 
                             <InfoRow
                                 title="Call"
+                                delay={0.1}
                                 icon={
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -132,6 +138,7 @@ export default function ContactPageClient() {
 
                             <InfoRow
                                 title="Email"
+                                delay={0.2}
                                 icon={
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -155,6 +162,7 @@ export default function ContactPageClient() {
 
                             <InfoRow
                                 title="Hours"
+                                delay={0.3}
                                 icon={
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -177,7 +185,7 @@ export default function ContactPageClient() {
                         </div>
                     </div>
 
-                    <div className="lg:col-span-3 lg:border-l lg:border-navy/10 lg:pl-14">
+                    <Reveal variant="right" delay={0.15} className="lg:col-span-3 lg:border-l lg:border-navy/10 lg:pl-14">
                         <h2 className="font-league font-bold text-navy text-2xl md:text-3xl mb-1">
                             Send us a message
                         </h2>
@@ -270,7 +278,7 @@ export default function ContactPageClient() {
                                 )}
                             </button>
                         </form>
-                    </div>
+                    </Reveal>
                 </div>
             </section>
         </>
