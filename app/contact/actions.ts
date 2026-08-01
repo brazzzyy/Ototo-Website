@@ -2,14 +2,24 @@
 
 import { Resend } from 'resend';
 
+/** Escape user input before interpolating into the email HTML. */
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 export async function submitContactForm(formData: FormData) {
   const CONTACT_EMAIL = process.env.CONTACT_EMAIL;
   const RESEND_API_KEY = process.env.RESEND_API_KEY;
   
-  const name = formData.get('name') as string;
-  const email = formData.get('email') as string;
-  const phone = formData.get('phone') as string;
-  const message = formData.get('message') as string;
+  const name = (formData.get('name') as string)?.trim().slice(0, 200);
+  const email = (formData.get('email') as string)?.trim().slice(0, 320);
+  const phone = (formData.get('phone') as string)?.trim().slice(0, 50);
+  const message = (formData.get('message') as string)?.trim().slice(0, 5000);
 
   if (!name || !email || !message) {
     return { success: false, error: 'Please fill in all required fields.' };
@@ -51,21 +61,21 @@ export async function submitContactForm(formData: FormData) {
       from: fromEmail,
       to: CONTACT_EMAIL,
       replyTo: email,
-      subject: `New Contact Form Submission from ${name} - Ototo Website`,
+      subject: `New Contact Form Submission from ${name.replace(/[\r\n]/g, ' ')} - Ototo Website`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #333; border-bottom: 2px solid #000; padding-bottom: 10px;">
             New Contact Form Submission
           </h2>
           <div style="margin-top: 20px;">
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-            <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
+            <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+            <p><strong>Email:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>
+            <p><strong>Phone:</strong> ${escapeHtml(phone || 'Not provided')}</p>
           </div>
           <div style="margin-top: 20px;">
             <p><strong>Message:</strong></p>
             <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; white-space: pre-wrap;">
-              ${message.replace(/\n/g, '<br>')}
+              ${escapeHtml(message).replace(/\n/g, '<br>')}
             </div>
           </div>
         </div>
