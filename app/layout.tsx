@@ -1,7 +1,21 @@
 import type { Metadata } from "next";
+import { League_Spartan, Lexend } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
+
+// Self-hosted via next/font — no render-blocking requests to fonts.googleapis.com
+const leagueSpartan = League_Spartan({
+  subsets: ["latin"],
+  variable: "--font-league-spartan",
+  display: "swap",
+});
+
+const lexend = Lexend({
+  subsets: ["latin"],
+  variable: "--font-lexend-sans",
+  display: "swap",
+});
 
 // --- 1. CONFIGURATION ---
 const CONFIG = {
@@ -76,7 +90,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${leagueSpartan.variable} ${lexend.variable}`}>
       <body>
         <script
           type="application/ld+json"
