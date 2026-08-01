@@ -1,10 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import Reviews from "@/components/reviews";
+import HeroAnimationReplay from "@/components/hero-animation-replay";
 
 export default function Home() {
   return (
     <>
+      <HeroAnimationReplay />
+
       {/* Home Banner — legacy full-photo hero */}
       <section className="relative flex min-h-96 md:min-h-125 lg:min-h-175 flex-col items-center justify-center overflow-hidden px-4 pt-16 pb-10">
         <Image
