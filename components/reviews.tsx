@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useRef } from 'react';
+import Reveal from '@/components/reveal';
 import { reviewsData } from '@/lib/reviews-data';
 import type { ReviewsData } from '@/lib/reviews-types';
 
@@ -79,7 +80,7 @@ export default function Reviews() {
     <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
       {/* Header: copy left, arrows right */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-        <div className="max-w-2xl">
+        <Reveal className="max-w-2xl">
           <span className="font-lexend text-xs md:text-sm tracking-[0.25em] uppercase text-navy/50">
             お客様の声 — Reviews
           </span>
@@ -98,9 +99,9 @@ export default function Reviews() {
               See all on Google
             </a>
           </p>
-        </div>
+        </Reveal>
 
-        <div className="flex items-center gap-3 shrink-0">
+        <Reveal variant="fade" delay={0.15} className="flex items-center gap-3 shrink-0">
           <button
             type="button"
             onClick={() => scrollReviews(-1)}
@@ -117,7 +118,7 @@ export default function Reviews() {
           >
             <span aria-hidden="true">→</span>
           </button>
-        </div>
+        </Reveal>
       </div>
 
       {/* Card carousel */}
@@ -125,10 +126,11 @@ export default function Reviews() {
         ref={scrollerRef}
         className="mt-10 md:mt-12 flex gap-4 sm:gap-5 md:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-2 max-sm:px-2 sm:px-0 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
-        {reviews.map((review) => (
-          <div
+        {reviews.map((review, index) => (
+          <Reveal
             key={`${review.authorName}-${review.time}`}
-            data-review-card
+            data-review-card=""
+            delay={Math.min(index, 3) * 0.09}
             className="snap-start shrink-0 w-full sm:w-90 lg:w-96 bg-white border border-navy/10 rounded-2xl p-6 sm:p-7 flex flex-col shadow-[0_10px_30px_-18px_rgba(18,18,18,0.25)]"
           >
             {/* Reviewer */}
@@ -178,7 +180,7 @@ export default function Reviews() {
             <p className="mt-3 font-lexend font-light italic text-sm text-navy/75 leading-relaxed line-clamp-5">
               &ldquo;{review.text}&rdquo;
             </p>
-          </div>
+          </Reveal>
         ))}
       </div>
     </div>

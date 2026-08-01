@@ -3,6 +3,7 @@ import { League_Spartan, Lexend } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
+import HeroAnimationReplay from "@/components/hero-animation-replay";
 
 // Self-hosted via next/font — no render-blocking requests to fonts.googleapis.com
 const leagueSpartan = League_Spartan({
@@ -92,11 +93,24 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${leagueSpartan.variable} ${lexend.variable}`}>
       <body>
+        {/* Scroll-reveal elements start hidden in CSS — keep them visible without JS */}
+        <noscript>
+          <style
+            dangerouslySetInnerHTML={{
+              __html: ".reveal{opacity:1!important;transform:none!important}",
+            }}
+          />
+        </noscript>
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         
+        {/* One listener for the whole site — every page has a load-time hero
+            animation that would otherwise stay finished on a bfcache restore */}
+        <HeroAnimationReplay />
+
         <NavBar />
         {children}
         <Footer />

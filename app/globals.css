@@ -88,6 +88,38 @@ body {
   }
 }
 
+/* Scroll reveal — <Reveal> flips data-revealed on when the element enters view.
+   The hidden state ships in the server HTML so there is no flash of unstyled
+   content; the <noscript> block in the root layout unhides everything when JS
+   is unavailable. */
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-rise { transform: translateY(28px); }
+.reveal-left { transform: translateX(-32px); }
+.reveal-right { transform: translateX(32px); }
+.reveal-zoom { transform: scale(0.93); }
+.reveal-fade { transform: none; }
+
+.reveal[data-revealed] {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* Contact form — matches neutral UI field spec (1px border, 8px radius, 44px height) */
 .contact-label {
   display: block;

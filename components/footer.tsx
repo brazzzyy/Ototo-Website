@@ -1,19 +1,20 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import Reveal from "@/components/reveal";
+import wordmark from "@/public/brand/Ototo_footer.png";
 
 export default function Footer() {
     return (
         <>
             <div className="p-6 md:p-10 lg:p-15 bg-ink flex flex-col md:flex-row items-start gap-6 md:gap-8 lg:gap-12 justify-between">
                 {/* Logo + Description */}
-                <div className="flex flex-col w-full md:w-auto">
+                <Reveal className="flex flex-col w-full md:w-auto">
                     <Image
-                        src={"/brand/Ototo_footer.png"}
-                        alt="Logo image"
-                        width={180}
-                        height={180}
-                        className="md:w-40 lg:w-45 object-contain"
+                        src={wordmark}
+                        alt="Ototo"
+                        sizes="180px"
+                        className="w-45 md:w-40 lg:w-45 h-auto object-contain"
                     />
                     <p className="font-lexend font-extralight text-cream ml-2 md:ml-3 text-xs md:text-sm lg:text-base mt-2">
                         Refined. Authentic. Unforgettable.
@@ -29,20 +30,20 @@ export default function Footer() {
                             2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
                         </svg>
                     </Link>
-                </div>
+                </Reveal>
                 {/* Information */}
-                <div className="w-full md:w-auto">
+                <Reveal delay={0.1} className="w-full md:w-auto">
                     <span className="font-league font-semibold text-white text-xl md:text-2xl lg:text-3xl block mb-2 md:mb-3">Information</span>
                     <p className="font-lexend font-light text-cream/80 text-sm md:text-base mb-1 md:mb-2">205 N Richmond St, Appleton, WI 54911</p>
                     <p className="font-lexend font-light text-cream/80 text-sm md:text-base mb-1 md:mb-2">(920) 815-3039</p>
                     <p className="font-lexend font-light text-cream/80 text-sm md:text-base">Email: ototoWI@outlook.com</p>
-                </div>
+                </Reveal>
                 {/* Schedule */}
-                <div className="w-full md:w-auto lg:mr-60">
+                <Reveal delay={0.2} className="w-full md:w-auto lg:mr-60">
                     <span className="font-league font-semibold text-white text-xl md:text-2xl lg:text-3xl block mb-2 md:mb-3">Schedule</span>
                     <p className="font-lexend font-light text-cream/80 text-sm md:text-base mb-1 md:mb-2">Monday · Closed</p>
                     <p className="font-lexend font-light text-cream/80 text-sm md:text-base">Tuesday – Sunday · 11am – 8pm</p>
-                </div>
+                </Reveal>
             </div>
             {/* Website Privacy Terms */}
             <div className="font-lexend font-light flex flex-col sm:flex-row justify-between items-center sm:items-start gap-2 sm:gap-0 px-4 sm:px-8 md:px-12 lg:px-17 pb-4 bg-ink text-cream/60 text-xs sm:text-sm border-t border-cream/10 pt-4">
